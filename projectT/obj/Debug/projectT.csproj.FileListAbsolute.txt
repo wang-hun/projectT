@@ -1,0 +1,16 @@
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\projectT.exe.config
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\projectT.exe
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\projectT.pdb
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\SunnyUI.Common.dll
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\SunnyUI.dll
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.AssemblyReference.cache
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.Properties.Resources.resources
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.GenerateResource.cache
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.CoreCompileInputs.cache
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.CopyComplete
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.exe
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.pdb
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.LoadForm.resources
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\MySql.Data.dll
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\MySql.Data.xml
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.Form0.resources
