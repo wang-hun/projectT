@@ -86,5 +86,15 @@ namespace projectT
                 return false; // 用户名不存在
             }
         }
+
+        private void uiLinkLabel1_Click(object sender, EventArgs e)
+        {
+            FormRegister regFrom = new FormRegister();
+            this.Hide();
+            if (regFrom.ShowDialog()==DialogResult.Yes){
+                
+            }
+            this.Show();
+        }
     }
 }

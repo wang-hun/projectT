@@ -64,10 +64,16 @@
     <Compile Include="Form0.Designer.cs">
       <DependentUpon>Form0.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadForm.cs">
+    <Compile Include="load\FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoadForm.Designer.cs">
+    <Compile Include="load\FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="load\LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="load\LoadForm.Designer.cs">
       <DependentUpon>LoadForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -77,7 +83,10 @@
     <EmbeddedResource Include="Form0.resx">
       <DependentUpon>Form0.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadForm.resx">
+    <EmbeddedResource Include="load\FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="load\LoadForm.resx">
       <DependentUpon>LoadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

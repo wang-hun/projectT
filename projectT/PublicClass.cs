@@ -17,6 +17,7 @@ namespace projectT
         public static Dictionary<int, UIForm> fromsRe=new Dictionary<int, UIForm>();
         public static UIForm currFrom=null;
         public static UIForm loadForm(int id) {
+            if (id == -1) return null;
             currFrom = fromsRe[id];
             return currFrom;
         

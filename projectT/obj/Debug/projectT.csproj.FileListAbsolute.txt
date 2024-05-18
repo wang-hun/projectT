@@ -14,3 +14,4 @@ D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.LoadForm.re
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\MySql.Data.dll
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\MySql.Data.xml
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.Form0.resources
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.FormRegister.resources

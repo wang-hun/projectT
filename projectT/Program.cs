@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sunny.UI;
 
 namespace projectT
 {
@@ -19,7 +20,9 @@ namespace projectT
             Application.SetCompatibleTextRenderingDefault(false);
             PublicClass.start();
             Application.Run(new LoadForm());
-            Application.Run(PublicClass.loadForm(PublicClass.userid)); 
+            UIForm newFrom = PublicClass.loadForm(PublicClass.userid);
+            if (newFrom == null) return;
+            Application.Run(newFrom); 
         }
     }
 }
