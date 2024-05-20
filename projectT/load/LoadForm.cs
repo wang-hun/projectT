@@ -24,8 +24,8 @@ namespace projectT
         {
 
         }
-
     
+
 
         private void LoadForm_ButtonCancelClick(object sender, EventArgs e)
         {
@@ -96,5 +96,7 @@ namespace projectT
             }
             this.Show();
         }
+
+       
     }
 }

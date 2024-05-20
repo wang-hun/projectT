@@ -32,8 +32,10 @@ namespace projectT
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiFlowLayoutPanel1 = new Sunny.UI.UIFlowLayoutPanel();
+            this.uiLabel3 = new Sunny.UI.UILabel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.uiSymbolLabel5 = new Sunny.UI.UISymbolLabel();
+            this.uiListBox1 = new Sunny.UI.UIComboBox();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
             this.uiTextBox3 = new Sunny.UI.UITextBox();
@@ -41,6 +43,8 @@ namespace projectT
             this.uiSymbolLabel4 = new Sunny.UI.UISymbolLabel();
             this.uiTextBox4 = new Sunny.UI.UITextBox();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
+            this.uiSymbolButton3 = new Sunny.UI.UISymbolButton();
+            this.uiSymbolButton4 = new Sunny.UI.UISymbolButton();
             this.uiTextBox2 = new Sunny.UI.UITextBox();
             this.uiSymbolLabel1 = new Sunny.UI.UISymbolLabel();
             this.uiSymbolLabel2 = new Sunny.UI.UISymbolLabel();
@@ -54,8 +58,6 @@ namespace projectT
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.uiLabel3 = new Sunny.UI.UILabel();
-            this.uiListBox1 = new Sunny.UI.UIComboBox();
             this.uiFlowLayoutPanel1.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
@@ -104,6 +106,7 @@ namespace projectT
             this.uiSymbolButton2.TabIndex = 3;
             this.uiSymbolButton2.Text = "确定";
             this.uiSymbolButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton2.Click += new System.EventHandler(this.uiSymbolButton2_Click);
             // 
             // uiFlowLayoutPanel1
             // 
@@ -135,6 +138,19 @@ namespace projectT
             this.uiFlowLayoutPanel1.TabIndex = 1;
             this.uiFlowLayoutPanel1.Text = "uiFlowLayoutPanel1";
             this.uiFlowLayoutPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiLabel3
+            // 
+            this.uiLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiLabel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel3.ForeColor = System.Drawing.Color.Red;
+            this.uiLabel3.Location = new System.Drawing.Point(-193, 452);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(427, 23);
+            this.uiLabel3.TabIndex = 14;
+            this.uiLabel3.Text = "身份不能为空！";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiTableLayoutPanel3
             // 
@@ -169,6 +185,31 @@ namespace projectT
             this.uiSymbolLabel5.SymbolSize = 36;
             this.uiSymbolLabel5.TabIndex = 0;
             this.uiSymbolLabel5.Text = "身份";
+            // 
+            // uiListBox1
+            // 
+            this.uiListBox1.DataSource = null;
+            this.uiListBox1.FillColor = System.Drawing.Color.White;
+            this.uiListBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiListBox1.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.uiListBox1.Items.AddRange(new object[] {
+            "请选择身份",
+            "车主",
+            "停车场管理员",
+            "监管者"});
+            this.uiListBox1.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.uiListBox1.Location = new System.Drawing.Point(121, 5);
+            this.uiListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiListBox1.MinimumSize = new System.Drawing.Size(63, 0);
+            this.uiListBox1.Name = "uiListBox1";
+            this.uiListBox1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.uiListBox1.Size = new System.Drawing.Size(246, 29);
+            this.uiListBox1.SymbolSize = 24;
+            this.uiListBox1.TabIndex = 1;
+            this.uiListBox1.Text = "请选择身份";
+            this.uiListBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiListBox1.Watermark = "";
+            this.uiListBox1.Leave += new System.EventHandler(this.uiListBox1_Leave);
             // 
             // uiLabel2
             // 
@@ -224,6 +265,8 @@ namespace projectT
             this.uiTextBox3.TabIndex = 3;
             this.uiTextBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox3.Watermark = "";
+            this.uiTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            this.uiTextBox3.Leave += new System.EventHandler(this.uiTextBox3_Leave);
             // 
             // uiSymbolLabel3
             // 
@@ -272,14 +315,19 @@ namespace projectT
             this.uiTextBox4.TabIndex = 2;
             this.uiTextBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox4.Watermark = "";
+            this.uiTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
+            this.uiTextBox4.Leave += new System.EventHandler(this.uiTextBox4_Leave);
             // 
             // uiTableLayoutPanel1
             // 
             this.uiTableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiTableLayoutPanel1.ColumnCount = 2;
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.70213F));
-            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.29787F));
+            this.uiTableLayoutPanel1.ColumnCount = 3;
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.07692F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.92308F));
+            this.uiTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.uiTableLayoutPanel1.Controls.Add(this.uiSymbolButton3, 2, 0);
+            this.uiTableLayoutPanel1.Controls.Add(this.uiSymbolButton4, 2, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.uiTextBox2, 1, 1);
             this.uiTableLayoutPanel1.Controls.Add(this.uiSymbolLabel1, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiSymbolLabel2, 0, 1);
@@ -295,6 +343,36 @@ namespace projectT
             this.uiTableLayoutPanel1.TabIndex = 10;
             this.uiTableLayoutPanel1.TagString = null;
             // 
+            // uiSymbolButton3
+            // 
+            this.uiSymbolButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton3.IsCircle = true;
+            this.uiSymbolButton3.Location = new System.Drawing.Point(328, 3);
+            this.uiSymbolButton3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton3.Name = "uiSymbolButton3";
+            this.uiSymbolButton3.Size = new System.Drawing.Size(36, 35);
+            this.uiSymbolButton3.Symbol = 261550;
+            this.uiSymbolButton3.SymbolOffset = new System.Drawing.Point(-3, 0);
+            this.uiSymbolButton3.TabIndex = 6;
+            this.uiSymbolButton3.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton3.Click += new System.EventHandler(this.uiSymbolButton3_Click);
+            // 
+            // uiSymbolButton4
+            // 
+            this.uiSymbolButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton4.IsCircle = true;
+            this.uiSymbolButton4.Location = new System.Drawing.Point(328, 53);
+            this.uiSymbolButton4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton4.Name = "uiSymbolButton4";
+            this.uiSymbolButton4.Size = new System.Drawing.Size(36, 35);
+            this.uiSymbolButton4.Symbol = 261550;
+            this.uiSymbolButton4.SymbolOffset = new System.Drawing.Point(-3, 0);
+            this.uiSymbolButton4.TabIndex = 5;
+            this.uiSymbolButton4.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton4.Click += new System.EventHandler(this.uiSymbolButton4_Click);
+            // 
             // uiTextBox2
             // 
             this.uiTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -302,7 +380,7 @@ namespace projectT
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox2.Location = new System.Drawing.Point(120, 55);
+            this.uiTextBox2.Location = new System.Drawing.Point(118, 55);
             this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox2.Maximum = 20D;
             this.uiTextBox2.MaxLength = 20;
@@ -311,10 +389,11 @@ namespace projectT
             this.uiTextBox2.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox2.PasswordChar = '·';
             this.uiTextBox2.ShowText = false;
-            this.uiTextBox2.Size = new System.Drawing.Size(243, 40);
+            this.uiTextBox2.Size = new System.Drawing.Size(203, 40);
             this.uiTextBox2.TabIndex = 3;
             this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox2.Watermark = "";
+            this.uiTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             this.uiTextBox2.Leave += new System.EventHandler(this.uiTextBox2_Leave);
             // 
             // uiSymbolLabel1
@@ -326,7 +405,7 @@ namespace projectT
             this.uiSymbolLabel1.Location = new System.Drawing.Point(3, 3);
             this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel1.Name = "uiSymbolLabel1";
-            this.uiSymbolLabel1.Size = new System.Drawing.Size(110, 44);
+            this.uiSymbolLabel1.Size = new System.Drawing.Size(108, 44);
             this.uiSymbolLabel1.Symbol = 61475;
             this.uiSymbolLabel1.TabIndex = 0;
             this.uiSymbolLabel1.Text = "设置密码";
@@ -340,7 +419,7 @@ namespace projectT
             this.uiSymbolLabel2.Location = new System.Drawing.Point(3, 53);
             this.uiSymbolLabel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel2.Name = "uiSymbolLabel2";
-            this.uiSymbolLabel2.Size = new System.Drawing.Size(110, 44);
+            this.uiSymbolLabel2.Size = new System.Drawing.Size(108, 44);
             this.uiSymbolLabel2.TabIndex = 1;
             this.uiSymbolLabel2.Text = "确认密码";
             // 
@@ -351,7 +430,7 @@ namespace projectT
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox1.Location = new System.Drawing.Point(120, 5);
+            this.uiTextBox1.Location = new System.Drawing.Point(118, 5);
             this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox1.Maximum = 20D;
             this.uiTextBox1.MaxLength = 20;
@@ -360,10 +439,11 @@ namespace projectT
             this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox1.PasswordChar = '·';
             this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(243, 40);
+            this.uiTextBox1.Size = new System.Drawing.Size(203, 40);
             this.uiTextBox1.TabIndex = 2;
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
+            this.uiTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             this.uiTextBox1.Leave += new System.EventHandler(this.uiTextBox1_Leave);
             // 
             // uiLabel1
@@ -475,44 +555,6 @@ namespace projectT
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
-            // uiLabel3
-            // 
-            this.uiLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiLabel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel3.ForeColor = System.Drawing.Color.Red;
-            this.uiLabel3.Location = new System.Drawing.Point(-193, 452);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(427, 23);
-            this.uiLabel3.TabIndex = 14;
-            this.uiLabel3.Text = "身份不能为空！";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiListBox1
-            // 
-            this.uiListBox1.DataSource = null;
-            this.uiListBox1.FillColor = System.Drawing.Color.White;
-            this.uiListBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiListBox1.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.uiListBox1.Items.AddRange(new object[] {
-            "请选择身份",
-            "车主",
-            "停车场管理员",
-            "监管者"});
-            this.uiListBox1.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiListBox1.Location = new System.Drawing.Point(121, 5);
-            this.uiListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiListBox1.MinimumSize = new System.Drawing.Size(63, 0);
-            this.uiListBox1.Name = "uiListBox1";
-            this.uiListBox1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.uiListBox1.Size = new System.Drawing.Size(246, 29);
-            this.uiListBox1.SymbolSize = 24;
-            this.uiListBox1.TabIndex = 1;
-            this.uiListBox1.Text = "请选择身份";
-            this.uiListBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiListBox1.Watermark = "";
-            this.uiListBox1.Leave += new System.EventHandler(this.uiListBox1_Leave);
-            // 
             // FormRegister
             // 
             this.AllowShowTitle = false;
@@ -575,5 +617,7 @@ namespace projectT
         private Sunny.UI.UISymbolLabel uiSymbolLabel5;
         private Sunny.UI.UILabel uiLabel3;
         private Sunny.UI.UIComboBox uiListBox1;
+        private Sunny.UI.UISymbolButton uiSymbolButton4;
+        private Sunny.UI.UISymbolButton uiSymbolButton3;
     }
 }
