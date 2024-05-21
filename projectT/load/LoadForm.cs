@@ -70,7 +70,7 @@ namespace projectT
                     
                     PublicClass.userid = userIdentity;
                     //打开一个新窗体 
-                 
+                    PublicClass.user = userName;
                     return true; // 登录成功
                 }
                 else

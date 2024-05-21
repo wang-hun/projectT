@@ -11,6 +11,7 @@ namespace projectT
     public class PublicClass
     {
         public static int userid=-1;//用户身份 0： 1： 2：
+        public static string user;
         public static List<UIPage> infroms = new List<UIPage>();
         public static List<string> fromsName = new List<string>();
         /// <summary>
@@ -24,6 +25,9 @@ namespace projectT
         /// <returns>系统总界面(单例)</returns>
         public static UIForm loadForm()
         {
+            if (userid == -1) {
+                return null;
+            }
             if (currFrom==null) {
                 currFrom = new Form0();
             }
