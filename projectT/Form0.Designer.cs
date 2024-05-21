@@ -29,32 +29,72 @@ namespace projectT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form0));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.Header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Aside
             // 
             this.Aside.LineColor = System.Drawing.Color.Black;
-            this.Aside.Size = new System.Drawing.Size(250, 406);
+            this.Aside.Location = new System.Drawing.Point(0, 191);
+            this.Aside.Size = new System.Drawing.Size(244, 434);
             // 
             // Header
             // 
+            this.Header.BackColor = System.Drawing.Color.Maroon;
             this.Header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Header.Size = new System.Drawing.Size(1153, 110);
+            this.Header.Controls.Add(this.uiLabel1);
+            this.Header.Controls.Add(this.pictureBox1);
+            this.Header.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
+            this.Header.Size = new System.Drawing.Size(1319, 156);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::projectT.Properties.Resources.TT;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 156);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 48F);
+            this.uiLabel1.ForeColor = System.Drawing.Color.Gold;
+            this.uiLabel1.Location = new System.Drawing.Point(181, 0);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(543, 156);
+            this.uiLabel1.TabIndex = 1;
+            this.uiLabel1.Text = "T Company";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form0
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1153, 551);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.ClientSize = new System.Drawing.Size(1319, 625);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form0";
             this.Style = Sunny.UI.UIStyle.Custom;
-            this.Text = "Form1";
+            this.Text = "智能停车管理系统";
             this.ZoomScaleRect = new System.Drawing.Rectangle(18, 18, 800, 450);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Sunny.UI.UILabel uiLabel1;
     }
 }
 

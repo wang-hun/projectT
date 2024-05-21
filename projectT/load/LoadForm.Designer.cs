@@ -29,6 +29,7 @@ namespace projectT
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadForm));
             this.uiLinkLabel1 = new Sunny.UI.UILinkLabel();
             this.SuspendLayout();
             // 
@@ -63,12 +64,13 @@ namespace projectT
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::projectT.Properties.Resources.bg1;
+            this.ButtonCancelText = "退出";
             this.ClientSize = new System.Drawing.Size(750, 450);
             this.CloseAskString = "";
             this.Controls.Add(this.uiLinkLabel1);
             this.EscClose = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadForm";
-            this.ShowInTaskbar = true;
             this.SubText = "智能停车管理系统 V0.0.0.1";
             this.Text = "LoadForm";
             this.Title = "智能停车管理系统";

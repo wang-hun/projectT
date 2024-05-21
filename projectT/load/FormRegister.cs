@@ -268,7 +268,7 @@ namespace projectT
                     return false;
                 }
             }catch (Exception e) {
-                MessageBox.Show("数据库写入错误 in USER.SQLINSERT()");//希望不会发生这种情况
+                MessageBox.Show("数据库写入错误 in USER.SQLINSERT()"+e);//希望不会发生这种情况
                 return false;
             }
         

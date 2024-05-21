@@ -24,6 +24,8 @@ namespace projectT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pictureBox1.BringToFront();
+            uiLabel1.BringToFront();
             this.ShowStatusForm(100, "数据加载中......", 0);
             for (int i = 0; i < 88; i++)
             {

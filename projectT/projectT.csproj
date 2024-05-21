@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TT.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -142,6 +145,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ract4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TT.ico" />
+    <Content Include="TT.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
