@@ -16,20 +16,32 @@ namespace projectT
         /// <summary>
         /// (userid,uiform)窗口状态机。
         /// </summary>
-        public static Dictionary<int, UIForm> fromsRe=new Dictionary<int, UIForm>();
+        //public static Dictionary<int, UIForm> fromsRe=new Dictionary<int, UIForm>();
         public static UIForm currFrom=null;
+        /// <summary>
+        /// 系统总界面加载
+        /// </summary>
+        /// <returns>系统总界面(单例)</returns>
+        public static UIForm loadForm()
+        {
+            if (currFrom==null) {
+                currFrom = new Form0();
+            }
+            return currFrom;
+        }
+        /*已废弃，主窗口保持不变，功能由page切换所取代
         public static UIForm loadForm(int id) {
             if (id == -1) return null;
             currFrom = fromsRe[id];
             return currFrom;
         
-        }
+        }*/
         /// <summary>
         /// 程序初始化函数
         /// </summary>
         public static void start()
         {
-            PublicClass.fromsRe.Add(0, new Form0());
+            //PublicClass.fromsRe.Add(0, new Form0());
         }
         public static void loadInFrom() {
             infroms.ForEach(ifrom=> {

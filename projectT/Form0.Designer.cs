@@ -76,7 +76,8 @@ namespace projectT
             // 
             // Form0
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(115F, 115F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1319, 625);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

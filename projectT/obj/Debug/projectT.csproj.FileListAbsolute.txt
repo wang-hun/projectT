@@ -15,3 +15,4 @@ D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.Core
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.CopyComplete
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.exe
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.pdb
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.AssemblyReference.cache

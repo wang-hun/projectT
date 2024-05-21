@@ -71,6 +71,7 @@ namespace projectT
             this.EscClose = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadForm";
+            this.ShowInTaskbar = true;
             this.SubText = "智能停车管理系统 V0.0.0.1";
             this.Text = "LoadForm";
             this.Title = "智能停车管理系统";

@@ -20,7 +20,7 @@ namespace projectT
             Application.SetCompatibleTextRenderingDefault(false);
             PublicClass.start();
             Application.Run(new LoadForm());
-            UIForm newFrom = PublicClass.loadForm(PublicClass.userid);
+            UIForm newFrom = PublicClass.loadForm();
             if (newFrom == null) return;
             Application.Run(newFrom); 
         }
