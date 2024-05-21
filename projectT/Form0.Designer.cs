@@ -31,6 +31,16 @@ namespace projectT
         {
             this.SuspendLayout();
             // 
+            // Aside
+            // 
+            this.Aside.LineColor = System.Drawing.Color.Black;
+            this.Aside.Size = new System.Drawing.Size(250, 406);
+            // 
+            // Header
+            // 
+            this.Header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Header.Size = new System.Drawing.Size(1153, 110);
+            // 
             // Form0
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;

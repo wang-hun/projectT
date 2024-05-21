@@ -11,6 +11,8 @@ namespace projectT
     public class PublicClass
     {
         public static int userid=-1;//用户身份 0： 1： 2：
+        public static List<UIPage> infroms = new List<UIPage>();
+        public static List<string> fromsName = new List<string>();
         /// <summary>
         /// (userid,uiform)窗口状态机。
         /// </summary>
@@ -28,6 +30,22 @@ namespace projectT
         public static void start()
         {
             PublicClass.fromsRe.Add(0, new Form0());
+        }
+        public static void loadInFrom() {
+            infroms.ForEach(ifrom=> {
+                ifrom = null;
+            });
+            infroms.Clear();
+            fromsName.Clear();
+            switch (userid) {
+                case 0:
+                    ///车主的嵌入式界面加载
+                    infroms.Add(new InFormPrivaInfo());
+                    fromsName.Add("个人信息");
+                    ///
+                    break;
+            
+            }
         }
 
     }
