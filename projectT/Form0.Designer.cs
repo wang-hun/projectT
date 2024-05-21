@@ -32,6 +32,7 @@ namespace projectT
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form0));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiLabel1 = new Sunny.UI.UILabel();
+            this.uiLabel2 = new Sunny.UI.UILabel();
             this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,10 +47,11 @@ namespace projectT
             // 
             this.Header.BackColor = System.Drawing.Color.Maroon;
             this.Header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Header.Controls.Add(this.uiLabel2);
             this.Header.Controls.Add(this.uiLabel1);
             this.Header.Controls.Add(this.pictureBox1);
             this.Header.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
-            this.Header.Size = new System.Drawing.Size(1319, 156);
+            this.Header.Size = new System.Drawing.Size(1130, 156);
             // 
             // pictureBox1
             // 
@@ -74,12 +76,24 @@ namespace projectT
             this.uiLabel1.Text = "T Company";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // uiLabel2
+            // 
+            this.uiLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiLabel2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 13.77391F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel2.ForeColor = System.Drawing.Color.White;
+            this.uiLabel2.Location = new System.Drawing.Point(871, 130);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(256, 23);
+            this.uiLabel2.TabIndex = 2;
+            this.uiLabel2.Text = "TT2/ProjectT";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // Form0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(115F, 115F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1319, 625);
+            this.ClientSize = new System.Drawing.Size(1130, 625);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form0";
             this.Style = Sunny.UI.UIStyle.Custom;
@@ -96,6 +110,7 @@ namespace projectT
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UILabel uiLabel1;
+        private Sunny.UI.UILabel uiLabel2;
     }
 }
 

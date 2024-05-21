@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Sunny.UI;
 
 namespace projectT
@@ -11,6 +12,7 @@ namespace projectT
     public class PublicClass
     {
         public static int userid=-1;//用户身份 0： 1： 2：
+        public static UserObject userObject;
         public static string user;
         public static List<UIPage> infroms = new List<UIPage>();
         public static List<string> fromsName = new List<string>();
@@ -29,6 +31,8 @@ namespace projectT
                 return null;
             }
             if (currFrom==null) {
+                userObject = new UserObject(userid);
+                userObject.userLoad(user);
                 currFrom = new Form0();
             }
             return currFrom;
@@ -64,6 +68,63 @@ namespace projectT
             }
         }
 
+    }
+   public class UserObject {
+        //用户对象
+        int userid = -1;//用户身份 0： 1： 2：
+        string name;//用户名字
+        string telnum;//电话号码
+        string username;//用户名，账号，不是用户的名字！！！
+        string password;//密码
+        //待补充
+        /// <summary>
+        /// 用户数据加载
+        /// </summary>
+        /// <param name="usName">用户名，账号</param>
+        public void userLoad(string usName) {
+          MySqlDataReader ds=SQLClass.ExecuteReader("SELECT * FROM users WHERE user=\""+usName+"\"");
+
+            try
+            {
+                if (ds.Read())
+                {
+                    this.username =usName;
+                    this.name = ds.GetString("name");
+                    this.telnum = ds.GetString("telnum");
+                    this.password = ds.GetString("passcode");
+                }
+                else
+                {
+                    MessageBox.Show("用户名未找到", "警告");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("数据库无法连接，请联系管理员。\n"+ex, "错误");
+                Program.CLOSE_APPLICATION();
+            }
+        }
+       
+        /// <param name="userid">用户身份</param>
+        public UserObject(int userid)
+        {
+            this.userid = userid;
+        }
+
+        public UserObject(int userid, string name, string telnum, string username, string password)
+        {
+            this.userid = userid;
+            this.name = name;
+            this.telnum = telnum;
+            this.username = username;
+            this.password = password;
+        }
+
+        public int Userid { get => userid; set => userid = value; }
+        public string Name { get => name; set => name = value; }
+        public string Telnum { get => telnum; set => telnum = value; }
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
     }
     
 }

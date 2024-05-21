@@ -24,5 +24,11 @@ namespace projectT
             if (newFrom == null) return;
             Application.Run(newFrom); 
         }
+        /// <summary>
+        /// 关闭整个程序，除非出现运行错误，请勿使用！
+        /// </summary>
+        public static void CLOSE_APPLICATION() {
+            Application.Exit();
+        }
     }
 }
