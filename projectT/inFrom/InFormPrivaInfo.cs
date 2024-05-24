@@ -38,5 +38,33 @@ namespace projectT
         {
 
         }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            string value = "";
+            if (this.ShowInputPasswordDialog(ref value))
+            {
+                if (value.Equals(PublicClass.userObject.Password))
+                {
+                    EditUserInfo frm = new EditUserInfo();
+                    frm.Render();
+                    frm.ShowDialog();
+                    if (frm.IsOK)
+                    {
+                        PublicClass.userObject.Name = EditUserInfo.name;
+                        PublicClass.userObject.Telnum = EditUserInfo.tel;
+                        uiLabel3.Text = PublicClass.userObject.Name;
+                        uiLabel4.Text = PublicClass.userObject.Telnum;
+                       SQLClass.ExecuteReader("UPDATE users SET name=" + "'"+ PublicClass.userObject.Name + "' ,"+ " telnum=" + "'" + PublicClass.userObject.Telnum + "' WHERE user=" + "'" + PublicClass.userObject.Username + "'");
+        
+                        this.ShowSuccessDialog("修改成功！");
+                    }
+                    frm.Dispose();
+                }
+                else {
+                    this.ShowErrorDialog("错误","密码错误");
+                }
+            }
+        }
     }
 }

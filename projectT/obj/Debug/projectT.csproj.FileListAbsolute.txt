@@ -16,3 +16,4 @@ D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.Copy
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.exe
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.pdb
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.csproj.AssemblyReference.cache
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.EditUserInfo.resources

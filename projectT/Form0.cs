@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sunny.UI;
@@ -13,29 +14,35 @@ namespace projectT
 {
     public partial class Form0 : UIHeaderAsideMainFrame
     {
+        private Thread th=null;//加载线程
         private const int StartinID = 1001;//from的id必须唯一，切记！切记！切记！
         private int inFromID = 1001;//from的id必须唯一，切记！切记！切记！
         public Form0()
         {
             InitializeComponent();
             //设置关联
-          
+            th = new Thread(() =>
+            {
+
+                this.ShowStatusForm(100, "数据加载中......", 0);
+                for (int i = 0; i < 90; i += 5)
+                {
+                    SystemEx.Delay(100);
+                    this.SetStatusFormDescription("数据加载中(" + i + "%)......");
+                    this.SetStatusFormStepIt(5);
+
+                }
+            });
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            th.Start();
             pictureBox1.BringToFront();
             uiLabel1.BringToFront();
             uiLabel2.BringToFront();
-
-            this.ShowStatusForm(100, "数据加载中......", 0);
-            for (int i = 0; i < 88; i++)
-            {
-                SystemEx.Delay(50);
-                this.SetStatusFormDescription("数据加载中(" + i + "%)......");
-                this.SetStatusFormStepIt();
-              
-            }
+            
             Aside.TabControl = MainTabControl;
 
             #region 使用示例
@@ -57,6 +64,10 @@ namespace projectT
                 inFromID++;
             }
             Aside.SelectFirst();
+            ///加载部分完成
+            Thread.Sleep(500); 
+            th.Abort();
+                 
             this.HideStatusForm();
         }
     }
