@@ -42,17 +42,21 @@ namespace projectT
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.Location = new System.Drawing.Point(413, 12);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(23, 12);
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOK.Location = new System.Drawing.Point(41, 12);
             // 
             // uiSymbolLabel1
             // 
             this.uiSymbolLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.uiSymbolLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiSymbolLabel1.Location = new System.Drawing.Point(49, 131);
+            this.uiSymbolLabel1.Location = new System.Drawing.Point(69, 148);
             this.uiSymbolLabel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel1.Name = "uiSymbolLabel1";
             this.uiSymbolLabel1.Size = new System.Drawing.Size(170, 35);
@@ -64,7 +68,7 @@ namespace projectT
             // 
             this.uiSymbolLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.uiSymbolLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiSymbolLabel2.Location = new System.Drawing.Point(49, 255);
+            this.uiSymbolLabel2.Location = new System.Drawing.Point(69, 272);
             this.uiSymbolLabel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiSymbolLabel2.Name = "uiSymbolLabel2";
             this.uiSymbolLabel2.Size = new System.Drawing.Size(170, 35);
@@ -76,7 +80,7 @@ namespace projectT
             // 
             this.nameTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nameTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.nameTextBox1.Location = new System.Drawing.Point(255, 131);
+            this.nameTextBox1.Location = new System.Drawing.Point(275, 148);
             this.nameTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nameTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
             this.nameTextBox1.Name = "nameTextBox1";
@@ -93,7 +97,7 @@ namespace projectT
             // 
             this.telNumTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.telNumTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.telNumTextBox2.Location = new System.Drawing.Point(255, 255);
+            this.telNumTextBox2.Location = new System.Drawing.Point(275, 272);
             this.telNumTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.telNumTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
             this.telNumTextBox2.Name = "telNumTextBox2";

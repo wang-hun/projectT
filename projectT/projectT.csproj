@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyDialog\EditPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDialog\EditPassword.Designer.cs">
+      <DependentUpon>EditPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDialog\EditUserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="load\LoadForm.resx">
       <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDialog\EditPassword.resx">
+      <DependentUpon>EditPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyDialog\EditUserInfo.resx">
       <DependentUpon>EditUserInfo.cs</DependentUpon>

@@ -41,17 +41,18 @@ namespace projectT
             // 
             this.Aside.LineColor = System.Drawing.Color.Black;
             this.Aside.Location = new System.Drawing.Point(0, 191);
-            this.Aside.Size = new System.Drawing.Size(244, 434);
+            this.Aside.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
+            this.Aside.Size = new System.Drawing.Size(244, 602);
             // 
             // Header
             // 
-            this.Header.BackColor = System.Drawing.Color.Maroon;
+            this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.Header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Header.Controls.Add(this.uiLabel2);
             this.Header.Controls.Add(this.uiLabel1);
             this.Header.Controls.Add(this.pictureBox1);
             this.Header.MenuStyle = Sunny.UI.UIMenuStyle.Custom;
-            this.Header.Size = new System.Drawing.Size(1130, 156);
+            this.Header.Size = new System.Drawing.Size(1215, 156);
             // 
             // pictureBox1
             // 
@@ -69,7 +70,7 @@ namespace projectT
             this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 48F);
             this.uiLabel1.ForeColor = System.Drawing.Color.Gold;
-            this.uiLabel1.Location = new System.Drawing.Point(181, 0);
+            this.uiLabel1.Location = new System.Drawing.Point(187, 0);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(543, 156);
             this.uiLabel1.TabIndex = 1;
@@ -81,7 +82,7 @@ namespace projectT
             this.uiLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.uiLabel2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 13.77391F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiLabel2.ForeColor = System.Drawing.Color.White;
-            this.uiLabel2.Location = new System.Drawing.Point(871, 130);
+            this.uiLabel2.Location = new System.Drawing.Point(956, 130);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(256, 23);
             this.uiLabel2.TabIndex = 2;
@@ -93,12 +94,13 @@ namespace projectT
             this.AutoScaleDimensions = new System.Drawing.SizeF(115F, 115F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1130, 625);
+            this.ClientSize = new System.Drawing.Size(1215, 793);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form0";
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "智能停车管理系统";
             this.ZoomScaleRect = new System.Drawing.Rectangle(18, 18, 800, 450);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form0_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

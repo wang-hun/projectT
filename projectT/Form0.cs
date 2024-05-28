@@ -70,5 +70,16 @@ namespace projectT
                  
             this.HideStatusForm();
         }
+
+        private void Form0_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.ShowAskDialog("你确定要退出吗"))
+            {
+                Application.Exit();
+            }
+            else {
+                e.Cancel = true;
+            }
+        }
     }
 }
