@@ -75,7 +75,7 @@ namespace projectT
         {
             if (this.ShowAskDialog("你确定要退出吗"))
             {
-                Application.Exit();
+               
             }
             else {
                 e.Cancel = true;

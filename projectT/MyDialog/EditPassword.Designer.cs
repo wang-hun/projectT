@@ -50,7 +50,8 @@ namespace projectT
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(36, 12);
+            this.btnOK.Location = new System.Drawing.Point(298, 12);
+            this.btnOK.Size = new System.Drawing.Size(99, 35);
             // 
             // TextBox2
             // 

@@ -76,6 +76,7 @@ namespace projectT
         string telnum;//电话号码
         string username;//用户名，账号，不是用户的名字！！！
         string password;//密码
+        string qqID;
         //待补充
         /// <summary>
         /// 用户数据加载
@@ -92,6 +93,7 @@ namespace projectT
                     this.name = ds.GetString("name");
                     this.telnum = ds.GetString("telnum");
                     this.password = ds.GetString("passcode");
+                    this.qqID = ds.IsDBNull(ds.GetOrdinal("qqID")) ? null : ds.GetString("qqID"); ;
                 }
                 else
                 {
@@ -125,6 +127,7 @@ namespace projectT
         public string Telnum { get => telnum; set => telnum = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
+        public string QqID { get => qqID; set => qqID = value; }
     }
     
 }

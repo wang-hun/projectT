@@ -5,9 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sunny.UI;
+using System.IO;
+using System.Net;
+
 
 namespace projectT
 {
@@ -17,9 +21,20 @@ namespace projectT
         {
             InitializeComponent();
         }
-
+        private void LoadImageFromUrl(string imageUrl)
+        {
+            using (WebClient client = new WebClient())
+            {
+                byte[] imageData = client.DownloadData(imageUrl);
+                using (MemoryStream stream = new MemoryStream(imageData))
+                {
+                    uiAvatar2.Image = Image.FromStream(stream);
+                }
+            }
+        }
         private void InFormPrivaInfo_Load(object sender, EventArgs e)
         {
+            this.AutoScrollMinSize = new Size(ClientRectangle.Width, ClientRectangle.Height);
             uiLabel1.Text = PublicClass.userObject.Username;
             uiLabel3.Text = PublicClass.userObject.Name;
             uiLabel4.Text = PublicClass.userObject.Telnum;
@@ -30,8 +45,22 @@ namespace projectT
                 case 2:id = "监管者"; break;
             }
             uiLabel2.Text = id;
+            changeQQtag();
 
-
+        }
+        private void changeQQtag() {
+            if (PublicClass.userObject.QqID==null|| PublicClass.userObject.QqID.Equals(String.Empty))
+            {
+                uiPanel3.Show();
+                uiPanel4.Hide();
+            }
+            else {
+                uiPanel3.Hide();
+                uiPanel4.Show();
+                uiLabel6.Text = PublicClass.userObject.QqID;
+                LoadImageFromUrl("http://q1.qlogo.cn/g?b=qq&nk="+ PublicClass.userObject.QqID+"&s=640");
+            }
+        
         }
 
         private void InFormPrivaInfo_Initialize(object sender, EventArgs e)
@@ -90,6 +119,36 @@ namespace projectT
                 {
                     this.ShowErrorDialog("错误", "密码错误");
                 }
+            }
+        }
+
+        private void uiSymbolButton1_Click_1(object sender, EventArgs e)
+        {
+
+           
+                string value = "请输入qq用户名";
+                if (this.ShowInputStringDialog(ref value, true, "请输入qq用户名：", true))
+                {
+                bool f1 = Regex.IsMatch(value, @"^[1-9]\d{4,9}$");
+                if (f1)
+                {
+                    PublicClass.userObject.QqID = value;
+                    SQLClass.ExecuteReader("UPDATE users SET qqID=" + "'" + PublicClass.userObject.QqID+ "' WHERE user=" + "'" + PublicClass.userObject.Username + "'");
+                    changeQQtag();
+                }
+                else {
+                    this.ShowInfoDialog("QQ用户名格式错误！");
+                }
+                }
+            
+        }
+
+        private void uiSymbolButton4_Click(object sender, EventArgs e)
+        {
+            if (this.ShowAskDialog("你确定要取消QQ号的绑定吗")) {
+                PublicClass.userObject.QqID = null;
+                SQLClass.ExecuteReader("UPDATE users SET qqID=" + "NULL WHERE user=" + "'" + PublicClass.userObject.Username + "'");
+                changeQQtag();
             }
         }
     }
