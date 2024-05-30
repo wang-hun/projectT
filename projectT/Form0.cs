@@ -14,7 +14,7 @@ namespace projectT
 {
     public partial class Form0 : UIHeaderAsideMainFrame
     {
-        private Thread th=null;//加载线程
+        private Thread th = null;//加载线程
         private const int StartinID = 1001;//from的id必须唯一，切记！切记！切记！
         private int inFromID = 1001;//from的id必须唯一，切记！切记！切记！
         public Form0()
@@ -34,7 +34,14 @@ namespace projectT
                 }
             });
         }
-
+        /// <summary>
+        /// 获取子页面
+        /// </summary>
+        /// <param name="index">索引，创建时候的顺序</param>
+        /// <returns></returns>
+        public UIPage GetSonPage(int index){
+            return this.GetPage(index);
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -79,6 +86,16 @@ namespace projectT
             }
             else {
                 e.Cancel = true;
+            }
+        }
+
+        private void Form0_PageSelected(object sender, UIPageEventArgs e)
+        {
+            UIPage page = e.Page;
+            if ( page is InFormMyCar)
+            {
+                InFormMyCar myCarPage =page as InFormMyCar;
+                myCarPage.Renew();
             }
         }
     }

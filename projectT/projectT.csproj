@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="inFrom\InFormMyCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inFrom\InFormMyCar.Designer.cs">
+      <DependentUpon>InFormMyCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDialog\EditPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="SQLClass.cs" />
     <EmbeddedResource Include="Form0.resx">
       <DependentUpon>Form0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inFrom\InFormMyCar.resx">
+      <DependentUpon>InFormMyCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inFrom\InFormPrivaInfo.resx">
       <DependentUpon>InFormPrivaInfo.cs</DependentUpon>

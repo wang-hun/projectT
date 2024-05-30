@@ -100,6 +100,7 @@ namespace projectT
             this.Style = Sunny.UI.UIStyle.Custom;
             this.Text = "智能停车管理系统";
             this.ZoomScaleRect = new System.Drawing.Rectangle(18, 18, 800, 450);
+            this.PageSelected += new Sunny.UI.OnUIPageChanged(this.Form0_PageSelected);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form0_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Header.ResumeLayout(false);

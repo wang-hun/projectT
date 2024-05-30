@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,6 +40,23 @@ namespace projectT
             }
             return currFrom;
         }
+        /// <summary>
+        /// 头像加载函数
+        /// </summary>
+        /// <param name="avatar">头像框</param>
+        /// <param name="imageUrl">图片url</param>
+        public static void LoadImageFromUrl(UIAvatar avatar, string imageUrl)
+        {
+            using (WebClient client = new WebClient())
+            {
+                byte[] imageData = client.DownloadData(imageUrl);
+                using (MemoryStream stream = new MemoryStream(imageData))
+                {
+                    avatar.Image = Image.FromStream(stream);
+                }
+            }
+        }
+      
         /*已废弃，主窗口保持不变，功能由page切换所取代
         public static UIForm loadForm(int id) {
             if (id == -1) return null;
@@ -61,7 +81,9 @@ namespace projectT
                 case 0:
                     ///车主的嵌入式界面加载
                     infroms.Add(new InFormPrivaInfo());
+                    infroms.Add(new InFormMyCar());
                     fromsName.Add("个人信息");
+                    fromsName.Add("车辆信息");
                     ///
                     break;
             

@@ -17,21 +17,19 @@ namespace projectT
 {
     public partial class InFormPrivaInfo : UIPage
     {
+    
+        
+      
+        //错误取消，如果主窗口不是form0，一定出错
+        /// <summary>
+        /// 所有需要加载头像的加载
+        /// </summary>
+    
         public InFormPrivaInfo()
         {
             InitializeComponent();
         }
-        private void LoadImageFromUrl(string imageUrl)
-        {
-            using (WebClient client = new WebClient())
-            {
-                byte[] imageData = client.DownloadData(imageUrl);
-                using (MemoryStream stream = new MemoryStream(imageData))
-                {
-                    uiAvatar2.Image = Image.FromStream(stream);
-                }
-            }
-        }
+      
         private void InFormPrivaInfo_Load(object sender, EventArgs e)
         {
             this.AutoScrollMinSize = new Size(ClientRectangle.Width, ClientRectangle.Height);
@@ -49,6 +47,7 @@ namespace projectT
 
         }
         private void changeQQtag() {
+            
             if (PublicClass.userObject.QqID==null|| PublicClass.userObject.QqID.Equals(String.Empty))
             {
                 uiPanel3.Show();
@@ -58,7 +57,8 @@ namespace projectT
                 uiPanel3.Hide();
                 uiPanel4.Show();
                 uiLabel6.Text = PublicClass.userObject.QqID;
-                LoadImageFromUrl("http://q1.qlogo.cn/g?b=qq&nk="+ PublicClass.userObject.QqID+"&s=640");
+
+                PublicClass.LoadImageFromUrl(this.uiAvatar2, "http://q1.qlogo.cn/g?b=qq&nk="+ PublicClass.userObject.QqID+"&s=640");
             }
         
         }
