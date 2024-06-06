@@ -247,6 +247,7 @@ namespace projectT
             this.uiSymbolButton2.TabIndex = 6;
             this.uiSymbolButton2.Text = "增加车辆";
             this.uiSymbolButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton2.Click += new System.EventHandler(this.uiSymbolButton2_Click);
             // 
             // uiSymbolButton1
             // 
