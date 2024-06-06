@@ -29,21 +29,25 @@ namespace projectT
         {
             InitializeComponent();
         }
-      
-        private void InFormPrivaInfo_Load(object sender, EventArgs e)
+        public void Renew()
         {
-            this.AutoScrollMinSize = new Size(ClientRectangle.Width, ClientRectangle.Height);
             uiLabel1.Text = PublicClass.userObject.Username;
             uiLabel3.Text = PublicClass.userObject.Name;
             uiLabel4.Text = PublicClass.userObject.Telnum;
-            string id="未知";
-            switch (PublicClass.userObject.Userid) {
-                case 0:id = "车主"; break;
-                case 1:id = "管理员"; break;
-                case 2:id = "监管者"; break;
+            string id = "未知";
+            switch (PublicClass.userObject.Userid)
+            {
+                case 0: id = "车主"; break;
+                case 1: id = "管理员"; break;
+                case 2: id = "监管者"; break;
             }
             uiLabel2.Text = id;
             changeQQtag();
+        }
+        private void InFormPrivaInfo_Load(object sender, EventArgs e)
+        {
+            this.AutoScrollMinSize = new Size(ClientRectangle.Width, ClientRectangle.Height);
+            Renew();
 
         }
         private void changeQQtag() {

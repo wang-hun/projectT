@@ -92,10 +92,14 @@ namespace projectT
         private void Form0_PageSelected(object sender, UIPageEventArgs e)
         {
             UIPage page = e.Page;
-            if ( page is InFormMyCar)
+            if (page is InFormMyCar)
             {
-                InFormMyCar myCarPage =page as InFormMyCar;
+                InFormMyCar myCarPage = page as InFormMyCar;
                 myCarPage.Renew();
+            }
+            else if(page is InFormPrivaInfo) {
+                InFormPrivaInfo myInfoPage = page as InFormPrivaInfo;
+                myInfoPage.Renew();
             }
         }
     }
