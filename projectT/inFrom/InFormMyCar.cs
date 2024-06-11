@@ -77,8 +77,11 @@ namespace projectT
                 // 获取到用户选择的图片文件路径
                 string imagePath = openFileDialog.FileName;
 
-                
-             str=CarIdentity.getNumber(imagePath);
+
+                str = CarIdentity.getNumber(imagePath);
+            }
+            else {
+                return;
             }
             if (str != null)
             {
@@ -88,10 +91,13 @@ namespace projectT
                     MySqlDataReader ds = SQLClass.ExecuteReader("select * from cars ORDER BY CarID DESC LIMIT 1");
                     ds.Read();
                     int carIDI = ds.GetInt32("CarID") + 1;
-                    SQLClass.ExecuteSql("INSERT INTO cars(CarType,CarID,CarNumber,userid )VALUES(\""+value+"\",\""+ carIDI + "\",\""+ str + "\",\""+PublicClass.userObject.Username+"\")");
+                    SQLClass.ExecuteSql("INSERT INTO cars(CarType,CarID,CarNumber,userid )VALUES(\"" + value + "\",\"" + carIDI + "\",\"" + str + "\",\"" + PublicClass.userObject.Username + "\")");
                     this.TableRenew();
                 }
-              
+
+            }
+            else {
+                this.ShowErrorDialog("错误！","图像识别失败或者网络访问错误！");
             }
         }
     }

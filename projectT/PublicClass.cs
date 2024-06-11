@@ -86,7 +86,12 @@ namespace projectT
                     fromsName.Add("车辆信息");
                     ///
                     break;
-            
+                case 1:
+                    infroms.Add(new InFormPrivaInfo());
+                    infroms.Add(new InFormMyPark());
+                    fromsName.Add("个人信息");
+                    fromsName.Add("停车场信息");
+                    break;
             }
         }
 

@@ -44,14 +44,17 @@ namespace projectT
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(413, 12);
+            this.btnCancel.Location = new System.Drawing.Point(379, 12);
+            this.btnCancel.Radius = 1;
+            this.btnCancel.Size = new System.Drawing.Size(128, 35);
             // 
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(298, 12);
-            this.btnOK.Size = new System.Drawing.Size(99, 35);
+            this.btnOK.Location = new System.Drawing.Point(170, 12);
+            this.btnOK.Radius = 1;
+            this.btnOK.Size = new System.Drawing.Size(129, 35);
             // 
             // TextBox2
             // 
@@ -120,7 +123,7 @@ namespace projectT
             this.Controls.Add(this.uiSymbolLabel2);
             this.Controls.Add(this.uiSymbolLabel1);
             this.Name = "EditPassword";
-            this.Text = "EditPassword";
+            this.Text = "密码设置";
             this.CheckedData += new Sunny.UI.UIEditForm.OnCheckedData(this.EditPassword_CheckedData);
             this.Load += new System.EventHandler(this.EditPassword_Load);
             this.Controls.SetChildIndex(this.pnlBtm, 0);

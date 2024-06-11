@@ -45,12 +45,14 @@ namespace projectT
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.Location = new System.Drawing.Point(413, 12);
+            this.btnCancel.Size = new System.Drawing.Size(43, 35);
             // 
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(41, 12);
+            this.btnOK.Location = new System.Drawing.Point(298, 12);
+            this.btnOK.Size = new System.Drawing.Size(43, 35);
             // 
             // uiSymbolLabel1
             // 
@@ -119,7 +121,7 @@ namespace projectT
             this.Controls.Add(this.uiSymbolLabel2);
             this.Controls.Add(this.uiSymbolLabel1);
             this.Name = "EditUserInfo";
-            this.Text = "EditUserInfo";
+            this.Text = "用户信息";
             this.Load += new System.EventHandler(this.EditUserInfo_Load);
             this.Controls.SetChildIndex(this.pnlBtm, 0);
             this.Controls.SetChildIndex(this.uiSymbolLabel1, 0);

@@ -97,11 +97,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarIdentity.cs" />
+    <Compile Include="inFrom\InFormMyPark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inFrom\InFormMyPark.Designer.cs">
+      <DependentUpon>InFormMyPark.cs</DependentUpon>
+    </Compile>
     <Compile Include="inFrom\InFormMyCar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inFrom\InFormMyCar.Designer.cs">
       <DependentUpon>InFormMyCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDialog\AddParkInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDialog\AddParkInfo.Designer.cs">
+      <DependentUpon>AddParkInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDialog\EditPassword.cs">
       <SubType>Form</SubType>
@@ -146,6 +158,9 @@
     <EmbeddedResource Include="Form0.resx">
       <DependentUpon>Form0.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="inFrom\InFormMyPark.resx">
+      <DependentUpon>InFormMyPark.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inFrom\InFormMyCar.resx">
       <DependentUpon>InFormMyCar.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="load\LoadForm.resx">
       <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDialog\AddParkInfo.resx">
+      <DependentUpon>AddParkInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyDialog\EditPassword.resx">
       <DependentUpon>EditPassword.cs</DependentUpon>

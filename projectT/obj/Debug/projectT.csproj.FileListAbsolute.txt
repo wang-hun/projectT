@@ -41,3 +41,5 @@ D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.Text.Encoding
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.Text.Json.xml
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.ValueTuple.xml
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.InFormMyPark.resources
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.MyDialog.AddParkInfo.resources
