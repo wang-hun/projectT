@@ -213,6 +213,16 @@ namespace projectT.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap TheCiteMap {
+            get {
+                object obj = ResourceManager.GetObject("TheCiteMap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap TIPHERETH {
             get {
                 object obj = ResourceManager.GetObject("TIPHERETH", resourceCulture);

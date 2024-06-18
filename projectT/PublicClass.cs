@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -39,6 +40,33 @@ namespace projectT
                 currFrom = new Form0();
             }
             return currFrom;
+        }
+        /// <summary>
+        /// 图片变暗，变亮
+        /// </summary>
+        /// <param name="original"></param>
+        /// <param name="brightness"></param>
+        /// <returns></returns>
+        public static Image AdjustBrightness(Image original, float brightness)
+        {
+            Bitmap bmp = new Bitmap(original);
+            ColorMatrix matrix = new ColorMatrix(new float[][]{
+            new float[] {1, 0, 0, 0, 0},
+            new float[] {0, 1, 0, 0, 0},
+            new float[] {0, 0, 1, 0, 0},
+            new float[] {0, 0, 0, 1, 0},
+            new float[] {brightness, brightness, brightness, 0, 1} }
+        );
+
+            using (ImageAttributes attributes = new ImageAttributes())
+            {
+                attributes.SetColorMatrix(matrix);
+                using (Graphics graphics = Graphics.FromImage(bmp))
+                {
+                    graphics.DrawImage(original, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, attributes);
+                }
+            }
+            return bmp;
         }
         /// <summary>
         /// 头像加载函数
@@ -135,7 +163,7 @@ namespace projectT
                 Program.CLOSE_APPLICATION();
             }
         }
-       
+        
         /// <param name="userid">用户身份</param>
         public UserObject(int userid)
         {

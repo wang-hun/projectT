@@ -44,11 +44,13 @@ namespace projectT
             this.CarID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CarType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
-            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.uiImageButton1 = new Sunny.UI.UIImageButton();
+            this.uiImageButton2 = new Sunny.UI.UIImageButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).BeginInit();
             this.SuspendLayout();
             // 
             // uiAvatar1
@@ -233,49 +235,50 @@ namespace projectT
             this.CarType.Name = "CarType";
             this.CarType.ReadOnly = true;
             // 
-            // uiSymbolButton2
+            // uiImageButton1
             // 
-            this.uiSymbolButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uiSymbolButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiSymbolButton2.Location = new System.Drawing.Point(242, 655);
-            this.uiSymbolButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton2.Name = "uiSymbolButton2";
-            this.uiSymbolButton2.Radius = 45;
-            this.uiSymbolButton2.Size = new System.Drawing.Size(175, 79);
-            this.uiSymbolButton2.Symbol = 61543;
-            this.uiSymbolButton2.TabIndex = 6;
-            this.uiSymbolButton2.Text = "增加车辆";
-            this.uiSymbolButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiSymbolButton2.Click += new System.EventHandler(this.uiSymbolButton2_Click);
+            this.uiImageButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.uiImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uiImageButton1.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.uiImageButton1.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiImageButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.uiImageButton1.Image = global::projectT.Properties.Resources.NETZACH;
+            this.uiImageButton1.ImageOffset = new System.Drawing.Point(10, 0);
+            this.uiImageButton1.Location = new System.Drawing.Point(44, 637);
+            this.uiImageButton1.Name = "uiImageButton1";
+            this.uiImageButton1.Size = new System.Drawing.Size(423, 143);
+            this.uiImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.uiImageButton1.TabIndex = 10;
+            this.uiImageButton1.TabStop = false;
+            this.uiImageButton1.Text = "增加车辆";
+            this.uiImageButton1.Click += new System.EventHandler(this.uiSymbolButton2_Click);
             // 
-            // uiSymbolButton1
+            // uiImageButton2
             // 
-            this.uiSymbolButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiSymbolButton1.FillColor = System.Drawing.Color.Maroon;
-            this.uiSymbolButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.uiSymbolButton1.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.uiSymbolButton1.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.uiSymbolButton1.FillSelectedColor = System.Drawing.Color.Maroon;
-            this.uiSymbolButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiSymbolButton1.Location = new System.Drawing.Point(567, 655);
-            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSymbolButton1.Name = "uiSymbolButton1";
-            this.uiSymbolButton1.Radius = 45;
-            this.uiSymbolButton1.Size = new System.Drawing.Size(175, 79);
-            this.uiSymbolButton1.Symbol = 61544;
-            this.uiSymbolButton1.TabIndex = 7;
-            this.uiSymbolButton1.Text = "删除车辆";
-            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
+            this.uiImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.uiImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uiImageButton2.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.uiImageButton2.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiImageButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.uiImageButton2.Image = global::projectT.Properties.Resources.TIPHERETH;
+            this.uiImageButton2.ImageOffset = new System.Drawing.Point(10, 0);
+            this.uiImageButton2.Location = new System.Drawing.Point(473, 637);
+            this.uiImageButton2.Name = "uiImageButton2";
+            this.uiImageButton2.Size = new System.Drawing.Size(423, 143);
+            this.uiImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.uiImageButton2.TabIndex = 11;
+            this.uiImageButton2.TabStop = false;
+            this.uiImageButton2.Text = "删除车辆";
+            this.uiImageButton2.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
             // InFormMyCar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(938, 894);
-            this.Controls.Add(this.uiSymbolButton1);
-            this.Controls.Add(this.uiSymbolButton2);
+            this.Controls.Add(this.uiImageButton2);
+            this.Controls.Add(this.uiImageButton1);
             this.Controls.Add(this.uiDataGridView1);
             this.Controls.Add(this.uiPanel1);
             this.Name = "InFormMyCar";
@@ -285,6 +288,8 @@ namespace projectT
             this.uiTableLayoutPanel1.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,7 +306,7 @@ namespace projectT
         private System.Windows.Forms.DataGridViewTextBoxColumn CarID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn CarType;
-        private Sunny.UI.UISymbolButton uiSymbolButton2;
-        private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private Sunny.UI.UIImageButton uiImageButton1;
+        private Sunny.UI.UIImageButton uiImageButton2;
     }
 }

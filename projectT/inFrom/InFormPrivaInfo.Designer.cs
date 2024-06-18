@@ -41,6 +41,7 @@ namespace projectT
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
             this.uiPanel2 = new Sunny.UI.UIPanel();
+            this.uiImageButton2 = new Sunny.UI.UIImageButton();
             this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiSymbolButton4 = new Sunny.UI.UISymbolButton();
@@ -51,14 +52,13 @@ namespace projectT
             this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.uiLabel5 = new Sunny.UI.UILabel();
-            this.uiImageButton2 = new Sunny.UI.UIImageButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.uiPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
             this.uiPanel4.SuspendLayout();
             this.uiPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).BeginInit();
             this.SuspendLayout();
             // 
             // uiLine1
@@ -291,10 +291,29 @@ namespace projectT
             this.uiPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel2.Name = "uiPanel2";
-            this.uiPanel2.Size = new System.Drawing.Size(941, 858);
+            this.uiPanel2.Size = new System.Drawing.Size(941, 746);
             this.uiPanel2.TabIndex = 5;
             this.uiPanel2.Text = null;
             this.uiPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiImageButton2
+            // 
+            this.uiImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.uiImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uiImageButton2.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.uiImageButton2.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiImageButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.uiImageButton2.Image = global::projectT.Properties.Resources.GEBURE;
+            this.uiImageButton2.ImageOffset = new System.Drawing.Point(10, 0);
+            this.uiImageButton2.Location = new System.Drawing.Point(69, 328);
+            this.uiImageButton2.Name = "uiImageButton2";
+            this.uiImageButton2.Size = new System.Drawing.Size(423, 143);
+            this.uiImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.uiImageButton2.TabIndex = 10;
+            this.uiImageButton2.TabStop = false;
+            this.uiImageButton2.Text = "修改密码";
+            this.uiImageButton2.Click += new System.EventHandler(this.uiSymbolButton2_Click);
             // 
             // uiImageButton1
             // 
@@ -306,7 +325,7 @@ namespace projectT
             this.uiImageButton1.ForeColor = System.Drawing.Color.Blue;
             this.uiImageButton1.Image = global::projectT.Properties.Resources.CHESED;
             this.uiImageButton1.ImageOffset = new System.Drawing.Point(10, 0);
-            this.uiImageButton1.Location = new System.Drawing.Point(276, 331);
+            this.uiImageButton1.Location = new System.Drawing.Point(498, 328);
             this.uiImageButton1.Name = "uiImageButton1";
             this.uiImageButton1.Size = new System.Drawing.Size(423, 143);
             this.uiImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,7 +345,7 @@ namespace projectT
             this.uiPanel4.Controls.Add(this.uiLabel6);
             this.uiPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.uiPanel4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanel4.Location = new System.Drawing.Point(137, 651);
+            this.uiPanel4.Location = new System.Drawing.Point(114, 484);
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
@@ -415,7 +434,7 @@ namespace projectT
             this.uiPanel3.Controls.Add(this.uiSymbolButton1);
             this.uiPanel3.Controls.Add(this.uiLabel5);
             this.uiPanel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanel3.Location = new System.Drawing.Point(137, 656);
+            this.uiPanel3.Location = new System.Drawing.Point(114, 479);
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
@@ -450,29 +469,10 @@ namespace projectT
             this.uiLabel5.Text = "本账户未绑定QQ";
             this.uiLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // uiImageButton2
-            // 
-            this.uiImageButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uiImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.uiImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.uiImageButton2.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.uiImageButton2.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiImageButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.uiImageButton2.Image = global::projectT.Properties.Resources.GEBURE;
-            this.uiImageButton2.ImageOffset = new System.Drawing.Point(10, 0);
-            this.uiImageButton2.Location = new System.Drawing.Point(276, 500);
-            this.uiImageButton2.Name = "uiImageButton2";
-            this.uiImageButton2.Size = new System.Drawing.Size(423, 143);
-            this.uiImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.uiImageButton2.TabIndex = 10;
-            this.uiImageButton2.TabStop = false;
-            this.uiImageButton2.Text = "修改密码";
-            this.uiImageButton2.Click += new System.EventHandler(this.uiSymbolButton2_Click);
-            // 
             // InFormPrivaInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(938, 848);
+            this.ClientSize = new System.Drawing.Size(938, 731);
             this.Controls.Add(this.uiPanel2);
             this.Name = "InFormPrivaInfo";
             this.Text = "InFormPrivaInfo";
@@ -481,10 +481,10 @@ namespace projectT
             this.uiTableLayoutPanel1.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             this.uiPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).EndInit();
             this.uiPanel4.ResumeLayout(false);
             this.uiPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).EndInit();
             this.ResumeLayout(false);
 
         }

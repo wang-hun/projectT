@@ -39,6 +39,12 @@ namespace projectT
             this.AutoScrollMinSize = new Size(ClientRectangle.Width, ClientRectangle.Height);
             Renew();
             TableRenew();
+            Image originalImage = uiImageButton1.Image; 
+            uiImageButton1.ImagePress = PublicClass.AdjustBrightness(originalImage, -0.2f); // 调整亮度为更暗
+            uiImageButton1.ImageHover = PublicClass.AdjustBrightness(originalImage, 0.4f); // 调整亮度为更亮
+            originalImage = uiImageButton2.Image;
+            uiImageButton2.ImagePress = PublicClass.AdjustBrightness(originalImage, -0.2f); // 调整亮度为更暗
+            uiImageButton2.ImageHover = PublicClass.AdjustBrightness(originalImage, 0.4f); // 调整亮度为更亮
         }
         public UIAvatar ThisAvatar() {
             return this.uiAvatar1;

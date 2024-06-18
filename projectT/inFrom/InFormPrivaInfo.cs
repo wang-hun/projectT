@@ -71,12 +71,12 @@ namespace projectT
         {
             Image originalImage = Properties.Resources.CHESED; // 从资源加载原始图片
             uiImageButton1.Image = originalImage;
-            uiImageButton1.ImagePress = AdjustBrightness(originalImage, -0.2f); // 调整亮度为更暗
-            uiImageButton1.ImageHover = AdjustBrightness(originalImage, 0.4f); // 调整亮度为更亮
+            uiImageButton1.ImagePress = PublicClass.AdjustBrightness(originalImage, -0.2f); // 调整亮度为更暗
+            uiImageButton1.ImageHover = PublicClass.AdjustBrightness(originalImage, 0.4f); // 调整亮度为更亮
             originalImage = Properties.Resources.GEBURE; // 从资源加载原始图片
             uiImageButton2.Image = originalImage;
-            uiImageButton2.ImagePress = AdjustBrightness(originalImage, -0.2f); // 调整亮度为更暗
-            uiImageButton2.ImageHover = AdjustBrightness(originalImage, 0.4f); // 调整亮度为更亮
+            uiImageButton2.ImagePress = PublicClass.AdjustBrightness(originalImage, -0.2f); // 调整亮度为更暗
+            uiImageButton2.ImageHover = PublicClass.AdjustBrightness(originalImage, 0.4f); // 调整亮度为更亮
         }
 
         private void uiSymbolButton1_Click(object sender, EventArgs e)
@@ -153,27 +153,7 @@ namespace projectT
                 }
             
         }
-        private Image AdjustBrightness(Image original, float brightness)
-        {
-            Bitmap bmp = new Bitmap(original);
-            ColorMatrix matrix = new ColorMatrix(new float[][]{
-            new float[] {1, 0, 0, 0, 0},
-            new float[] {0, 1, 0, 0, 0},
-            new float[] {0, 0, 1, 0, 0},
-            new float[] {0, 0, 0, 1, 0},
-            new float[] {brightness, brightness, brightness, 0, 1} }
-        );
-
-            using (ImageAttributes attributes = new ImageAttributes())
-            {
-                attributes.SetColorMatrix(matrix);
-                using (Graphics graphics = Graphics.FromImage(bmp))
-                {
-                    graphics.DrawImage(original, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, original.Width, original.Height, GraphicsUnit.Pixel, attributes);
-                }
-            }
-            return bmp;
-        }
+       
         private void uiSymbolButton4_Click(object sender, EventArgs e)
         {
             if (this.ShowAskDialog("你确定要取消QQ号的绑定吗")) {
