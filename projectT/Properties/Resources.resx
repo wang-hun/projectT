@@ -121,11 +121,35 @@
   <data name="bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BINAH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BINAH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CHESED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CHESED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GEBURE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GEBURE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="head" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\head.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HOD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HOKMA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HOKMA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KETER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KETER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MALKUTH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MALKUTH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NETZACH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NETZACH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ract" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,10 +163,16 @@
   <data name="ract4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ract4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TIPHERETH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TIPHERETH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TT.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YESOD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\YESOD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

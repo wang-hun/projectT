@@ -232,6 +232,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TT.ico" />
+    <None Include="Resources\KETER.png" />
+    <None Include="Resources\MALKUTH.png" />
+    <None Include="Resources\NETZACH.png" />
+    <None Include="Resources\TIPHERETH.png" />
+    <None Include="Resources\YESOD.png" />
+    <None Include="Resources\BINAH.png" />
+    <None Include="Resources\CHESED.png" />
+    <None Include="Resources\GEBURE.png" />
+    <None Include="Resources\HOD.png" />
+    <None Include="Resources\HOKMA.png" />
     <Content Include="TT.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -45,14 +45,16 @@ namespace projectT
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.Location = new System.Drawing.Point(413, 12);
-            this.btnCancel.Size = new System.Drawing.Size(43, 35);
+            this.btnCancel.Radius = 1;
+            this.btnCancel.Size = new System.Drawing.Size(1, 35);
             // 
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.Location = new System.Drawing.Point(298, 12);
-            this.btnOK.Size = new System.Drawing.Size(43, 35);
+            this.btnOK.Radius = 1;
+            this.btnOK.Size = new System.Drawing.Size(1, 35);
             // 
             // uiSymbolLabel1
             // 
