@@ -82,8 +82,10 @@ namespace projectT
                     ///车主的嵌入式界面加载
                     infroms.Add(new InFormPrivaInfo());
                     infroms.Add(new InFormMyCar());
+                    infroms.Add(new InFormFindPark());
                     fromsName.Add("个人信息");
                     fromsName.Add("车辆信息");
+                    fromsName.Add("查看停车场");
                     ///
                     break;
                 case 1:
