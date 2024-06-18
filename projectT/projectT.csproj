@@ -96,6 +96,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyDialog\AddParkLoca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDialog\AddParkLoca.Designer.cs">
+      <DependentUpon>AddParkLoca.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarIdentity.cs" />
     <Compile Include="inFrom\InFormFindPark.cs">
       <SubType>Form</SubType>
@@ -161,6 +167,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicClass.cs" />
     <Compile Include="SQLClass.cs" />
+    <EmbeddedResource Include="MyDialog\AddParkLoca.resx">
+      <DependentUpon>AddParkLoca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form0.resx">
       <DependentUpon>Form0.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +261,9 @@
     <None Include="Resources\HOD.png" />
     <None Include="Resources\HOKMA.png" />
     <None Include="Resources\TT 143x140.png" />
+    <None Include="Resources\TheCiteMap.jpg" />
+    <None Include="Resources\TheCiteMap.png" />
+    <None Include="Resources\BlackMark.png" />
     <Content Include="TT.ico" />
   </ItemGroup>
   <ItemGroup />

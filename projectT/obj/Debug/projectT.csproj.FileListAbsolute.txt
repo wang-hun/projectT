@@ -44,3 +44,4 @@ D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.ValueTuple.xm
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.InFormMyPark.resources
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.MyDialog.AddParkInfo.resources
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.InFormFindPark.resources
+D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.AddParkLoca.resources

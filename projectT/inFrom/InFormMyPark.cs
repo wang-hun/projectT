@@ -85,17 +85,20 @@ namespace projectT
         {
            
             AddParkInfo frm = new AddParkInfo();
+           
             frm.Render();
             frm.ShowDialog();
             if (frm.IsOK)
             {
-                MySqlDataReader ds = SQLClass.ExecuteReader("select * from park ORDER BY parkID DESC LIMIT 1");
-                ds.Read();
-                int parkIDI = ds.GetInt32("parkID") + 1;
-                SQLClass.ExecuteSql("INSERT INTO park(parkID,location,maxParking,nowParking,manageID,opening)VALUES(" +parkIDI + ",\"" + AddParkInfo.location + "\"," + AddParkInfo.parkMaxNum + "," + 0 +",\""+PublicClass.userObject.Username+"\",0)");
-                this.TableRenew();
+              
+                    MySqlDataReader ds = SQLClass.ExecuteReader("select * from park ORDER BY parkID DESC LIMIT 1");
+                    ds.Read();
+                    int parkIDI = ds.GetInt32("parkID") + 1;
+                    SQLClass.ExecuteSql("INSERT INTO park(parkID,location,maxParking,nowParking,manageID,opening)VALUES(" + parkIDI + ",\"" + AddParkInfo.location + "\"," + AddParkInfo.parkMaxNum + "," + 0 + ",\"" + PublicClass.userObject.Username + "\",0)");
+                    this.TableRenew();
+                
             }
-            frm.Dispose();
+                frm.Dispose();
         }
 
         private void uiSymbolButton3_Click(object sender, EventArgs e)
