@@ -97,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarIdentity.cs" />
+    <Compile Include="inFrom\InFormFindPark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inFrom\InFormFindPark.Designer.cs">
+      <DependentUpon>InFormFindPark.cs</DependentUpon>
+    </Compile>
     <Compile Include="inFrom\InFormMyPark.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     <Compile Include="SQLClass.cs" />
     <EmbeddedResource Include="Form0.resx">
       <DependentUpon>Form0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inFrom\InFormFindPark.resx">
+      <DependentUpon>InFormFindPark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inFrom\InFormMyPark.resx">
       <DependentUpon>InFormMyPark.cs</DependentUpon>
@@ -242,6 +251,7 @@
     <None Include="Resources\GEBURE.png" />
     <None Include="Resources\HOD.png" />
     <None Include="Resources\HOKMA.png" />
+    <None Include="Resources\TT 143x140.png" />
     <Content Include="TT.ico" />
   </ItemGroup>
   <ItemGroup />
