@@ -19,6 +19,9 @@ namespace projectT
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             PublicClass.start();
+            ///测试
+            Application.Run(new AddParkLocation());
+            ///
             Application.Run(new LoadForm());
             UIForm newFrom = PublicClass.loadForm();
             if (newFrom == null) return;

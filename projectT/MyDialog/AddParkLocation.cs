@@ -1,4 +1,5 @@
-﻿using Sunny.UI;
+﻿using GMap.NET;
+using Sunny.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,11 @@ namespace projectT
         public AddParkLocation()
         {
             InitializeComponent();
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+         
         }
     }
 }

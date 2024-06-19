@@ -59,7 +59,6 @@ namespace projectT
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
             this.gMapControl1.MouseWheelZoomEnabled = true;
-            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl1.Name = "gMapControl1";
             this.gMapControl1.NegativeMode = false;
             this.gMapControl1.PolygonsEnabled = true;
@@ -71,6 +70,7 @@ namespace projectT
             this.gMapControl1.Size = new System.Drawing.Size(875, 474);
             this.gMapControl1.TabIndex = 2;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // AddParkLocation
             // 
