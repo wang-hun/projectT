@@ -59,3 +59,4 @@ D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.Data.SqlClien
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.Data.SQLite.xml
 D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\System.Security.Principal.Windows.xml
 D:\系统默认\毕设\projectT\projectT\projectT\obj\Debug\projectT.AddParkLocation.resources
+D:\系统默认\毕设\projectT\projectT\projectT\bin\Debug\GMap.NET.WindowsPresentation.dll

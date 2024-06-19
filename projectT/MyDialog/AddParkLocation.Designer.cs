@@ -29,22 +29,23 @@ namespace projectT
         /// </summary>
         private void InitializeComponent()
         {
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.pnlBtm.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBtm
             // 
-            this.pnlBtm.Location = new System.Drawing.Point(1, 536);
-            this.pnlBtm.Size = new System.Drawing.Size(1099, 55);
+            this.pnlBtm.Location = new System.Drawing.Point(1, 531);
+            this.pnlBtm.Size = new System.Drawing.Size(993, 55);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(971, 12);
+            this.btnCancel.Location = new System.Drawing.Point(865, 12);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(856, 12);
+            this.btnOK.Location = new System.Drawing.Point(750, 12);
             // 
             // gMapControl1
             // 
@@ -53,12 +54,13 @@ namespace projectT
             this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(4, 54);
+            this.gMapControl1.LevelsKeepInMemory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(1, 38);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
             this.gMapControl1.MouseWheelZoomEnabled = true;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl1.Name = "gMapControl1";
             this.gMapControl1.NegativeMode = false;
             this.gMapControl1.PolygonsEnabled = true;
@@ -67,7 +69,7 @@ namespace projectT
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(875, 474);
+            this.gMapControl1.Size = new System.Drawing.Size(795, 485);
             this.gMapControl1.TabIndex = 2;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
@@ -75,7 +77,7 @@ namespace projectT
             // AddParkLocation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1101, 594);
+            this.ClientSize = new System.Drawing.Size(995, 589);
             this.Controls.Add(this.gMapControl1);
             this.Name = "AddParkLocation";
             this.Text = "选择所在位置";
@@ -88,6 +90,7 @@ namespace projectT
 
         #endregion
 
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }
