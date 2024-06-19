@@ -69,7 +69,7 @@ namespace projectT
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(795, 485);
+            this.gMapControl1.Size = new System.Drawing.Size(787, 485);
             this.gMapControl1.TabIndex = 2;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
@@ -81,8 +81,8 @@ namespace projectT
             this.Controls.Add(this.gMapControl1);
             this.Name = "AddParkLocation";
             this.Text = "选择所在位置";
-            this.Controls.SetChildIndex(this.pnlBtm, 0);
             this.Controls.SetChildIndex(this.gMapControl1, 0);
+            this.Controls.SetChildIndex(this.pnlBtm, 0);
             this.pnlBtm.ResumeLayout(false);
             this.ResumeLayout(false);
 
