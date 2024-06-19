@@ -73,6 +73,7 @@ namespace projectT
             this.gMapControl1.TabIndex = 2;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
+            this.gMapControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDoubleClick);
             // 
             // AddParkLocation
             // 
