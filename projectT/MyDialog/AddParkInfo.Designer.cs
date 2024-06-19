@@ -85,7 +85,7 @@ namespace projectT.MyDialog
             this.uiSymbolLabel1.Size = new System.Drawing.Size(170, 35);
             this.uiSymbolLabel1.Symbol = 561915;
             this.uiSymbolLabel1.TabIndex = 6;
-            this.uiSymbolLabel1.Text = "位置";
+            this.uiSymbolLabel1.Text = "位置描述";
             // 
             // uiIntegerUpDown1
             // 
