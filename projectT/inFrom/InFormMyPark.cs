@@ -90,12 +90,21 @@ namespace projectT
             frm.ShowDialog();
             if (frm.IsOK)
             {
-              
+                AddParkLocation fr = new AddParkLocation();
+
+                fr.Render();
+                fr.ShowDialog();
+                if (fr.IsOK && AddParkLocation.ischeck)
+                {
                     MySqlDataReader ds = SQLClass.ExecuteReader("select * from park ORDER BY parkID DESC LIMIT 1");
                     ds.Read();
                     int parkIDI = ds.GetInt32("parkID") + 1;
-                    SQLClass.ExecuteSql("INSERT INTO park(parkID,location,maxParking,nowParking,manageID,opening)VALUES(" + parkIDI + ",\"" + AddParkInfo.location + "\"," + AddParkInfo.parkMaxNum + "," + 0 + ",\"" + PublicClass.userObject.Username + "\",0)");
+                    SQLClass.ExecuteSql("INSERT INTO park(parkID,location,maxParking,nowParking,manageID,opening,PosX,PosY)VALUES(" + parkIDI + ",\"" + AddParkInfo.location + "\"," + AddParkInfo.parkMaxNum + "," + 0 + ",\"" + PublicClass.userObject.Username + "\",0,"+AddParkLocation.PosX+","+ AddParkLocation.PosY + ")");
                     this.TableRenew();
+
+                }
+                frm.Dispose();
+              
                 
             }
                 frm.Dispose();

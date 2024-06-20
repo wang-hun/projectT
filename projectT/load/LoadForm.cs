@@ -23,18 +23,7 @@ namespace projectT
 
         private void LoadForm_Load(object sender, EventArgs e)
         {
-            ///测试
-            AddParkLocation frm = new AddParkLocation();
-
-            frm.Render();
-            frm.ShowDialog();
-            if (frm.IsOK)
-            {
-
-
-            }
-            frm.Dispose();
-            ///
+            
         }
     
 

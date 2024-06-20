@@ -25,7 +25,9 @@ namespace projectT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ischeck = false;
+            PosX = 0;
+            PosY = 0;
         }
         private PointLatLng mouseDownPos;
         GMapOverlay markers = new GMapOverlay("lay");
@@ -70,7 +72,20 @@ namespace projectT
                 markers.Markers.Clear();
                 markers.Markers.Add(marker);
                 ischeck = true;
+                
             }
+            PosX = markers.Markers[0].Position.Lat;
+            PosY = markers.Markers[0].Position.Lng;
+            uiDigitalLabel1.Value = PosX;
+            uiDigitalLabel2.Value = PosY;
+        }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            uiDigitalLabel1.Value = 0;
+            uiDigitalLabel2.Value = 0;
+            ischeck = false;
+            markers.Markers.Clear();
         }
     }
 }
