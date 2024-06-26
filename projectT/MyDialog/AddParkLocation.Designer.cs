@@ -29,7 +29,6 @@ namespace projectT
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
@@ -179,8 +178,6 @@ namespace projectT
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;

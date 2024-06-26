@@ -82,7 +82,7 @@ namespace projectT
         {
             if (this.ShowAskDialog("你确定要退出吗"))
             {
-               
+                
             }
             else {
                 e.Cancel = true;
@@ -99,6 +99,11 @@ namespace projectT
             }
             else if(page is InFormPrivaInfo) {
                 InFormPrivaInfo myInfoPage = page as InFormPrivaInfo;
+                myInfoPage.Renew();
+            }
+            else if (page is InFormFindPark)
+            {
+                InFormFindPark myInfoPage = page as InFormFindPark;
                 myInfoPage.Renew();
             }
         }
