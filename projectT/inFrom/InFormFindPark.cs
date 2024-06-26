@@ -83,13 +83,19 @@ namespace projectT
             gMapControl1.Zoom = 10;        //当前比例
             //this.gMapControl1.ShowCenter = false;//不显示中心十字标记
             this.gMapControl1.DragButton = System.Windows.Forms.MouseButtons.Left;//左键拖拽地图
+            
             gMapControl1.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;//鼠标缩放模式
+            gMapControl1.MouseWheelZoomEnabled = false;//禁用鼠标滚轮放大缩小
+            
             gMapControl1.Position = new PointLatLng(32.043336, 120.808717);//地图中心坐标
            
             Renew();
             #endregion
 
         }
+
+    
+
         private void textBox1_LostFocus(object sender, EventArgs e)
         {
             if (uiTextBox1.Text == "")
@@ -112,7 +118,48 @@ namespace projectT
 
         }
 
+        private void uiImageButton1_Click(object sender, EventArgs e)
+        {
+            if (!uiTextBox1.Text.Equals("请输入位置说明")) {
+                string str = uiTextBox1.Text;
+                // 使用LINQ进行模糊匹配，这里使用了Contains方法进行简单示例，您可以根据需要调整匹配逻辑
+                var matchedParks = parks.Where(park => park.Location.IndexOf(str, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+                if (matchedParks.Count == 0)
+                {
+                    label2.Text = "未查到对应停车场，试试减少查询的内容？";
+                }
+                else {
+                    label2.Text = "查询到"+ matchedParks.Count+"处相关内容。";
+                    //
+                }
+            }
+        
+
+        }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            
+                if (gMapControl1 != null)
+                {
+                    int currentZoom = (int)gMapControl1.Zoom;
+                gMapControl1.Zoom = Math.Min(currentZoom + 1, gMapControl1.MaxZoom); // 防止超过最大缩放级别
+                }
+            
+        }
+
+        private void uiSymbolButton2_Click(object sender, EventArgs e)
+        {
+            if (gMapControl1 != null)
+            {
+                int currentZoom = (int)gMapControl1.Zoom;
+                gMapControl1.Zoom = Math.Max(currentZoom - 1, gMapControl1.MinZoom); // 防止低于最小缩放级别
+            }
+        }
+       
+
     }
+
     public class Park
     {
         public string Location { get; set; }
