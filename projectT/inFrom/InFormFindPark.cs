@@ -131,6 +131,8 @@ namespace projectT
                 else {
                     label2.Text = "查询到"+ matchedParks.Count+"处相关内容。";
                     //
+                    var park=matchedParks.FirstOrDefault();
+                    this.gMapControl1.Position =new PointLatLng(park.PosX, park.PosY);
                 }
             }
         
