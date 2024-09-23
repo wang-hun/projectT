@@ -16,7 +16,7 @@ namespace projectT
     {
 
         const string API_KEY = "BxZFqBQDMQ3gLuif4De1NwWf";
-        const string SECRET_KEY = "HgDGRJjvheqjjbvNwH7El8gOCw3mTlb7";
+        const string SECRET_KEY = "Wl6KvbfSTMnpooOWRu7xCzK8pKj9bPfK";
 
         public static string getNumber(string path)
         {
@@ -31,7 +31,7 @@ namespace projectT
             request.AddParameter("multi_scale", "false");
             IRestResponse response = client.Execute(request);
             var licensePlateInfo = JsonConvert.DeserializeObject<LicensePlateResult>(response.Content);
-            return licensePlateInfo.words_result.number;
+            return licensePlateInfo?.words_result?.number;
 
         }
 
