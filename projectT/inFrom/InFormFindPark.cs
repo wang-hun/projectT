@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace projectT
         static List<Park> parks = new List<Park>();
         GMapOverlay markers = new GMapOverlay("lay");
        public void Renew() {
-            MySqlDataReader ds = SQLClass.ExecuteReader("SELECT location,PosX,PosY FROM park");
+            MySqlDataReader ds = SQLClass.ExecuteReader("SELECT location,PosX,PosY,maxParking,nowParking FROM park");
 
             parks.Clear();
             markers.Markers.Clear();
@@ -37,7 +38,9 @@ namespace projectT
                 {
                     Location = ds.GetString(0), // "location"列的值
                     PosX = ds.GetDouble(1),     // "PosX"列的值
-                    PosY = ds.GetDouble(2)      // "PosY"列的值
+                    PosY = ds.GetDouble(2),    // "PosY"列的值
+                    MaxPost = ds.GetInt32(3),
+                    NowPost=ds.GetInt32(4)
                 };
                 parks.Add(park); // 将实例化的Park对象添加到列表中
             }
@@ -117,10 +120,24 @@ namespace projectT
             }
 
         }
-
+        private void changeParkinfoShow(Park park) {
+            this.label4.Text = park.Location;
+            var emptyPark = (park.MaxPost - park.NowPost);
+            this.uiDigitalLabel1.Value = emptyPark;
+            var havingPark = (park.NowPost * 1.0 / park.MaxPost);
+            this.uiLedLabel4.Text= havingPark + " %";
+            this.uiBattery1.Power = (int)((1 - havingPark)*100);
+        }
         private void uiImageButton1_Click(object sender, EventArgs e)
         {
-            if (!uiTextBox1.Text.Equals("请输入位置说明")) {
+            selectPark();
+
+        }
+
+        private void selectPark()
+        {
+            if (!uiTextBox1.Text.Equals("请输入位置说明"))
+            {
                 string str = uiTextBox1.Text;
                 // 使用LINQ进行模糊匹配，这里使用了Contains方法进行简单示例，您可以根据需要调整匹配逻辑
                 var matchedParks = parks.Where(park => park.Location.IndexOf(str, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
@@ -128,15 +145,15 @@ namespace projectT
                 {
                     label2.Text = "未查到对应停车场，试试减少查询的内容？";
                 }
-                else {
-                    label2.Text = "查询到"+ matchedParks.Count+"处相关内容。";
+                else
+                {
+                    label2.Text = "查询到" + matchedParks.Count + "处相关内容。";
                     //
-                    var park=matchedParks.FirstOrDefault();
-                    this.gMapControl1.Position =new PointLatLng(park.PosX, park.PosY);
+                    var park = matchedParks.FirstOrDefault();
+                    this.gMapControl1.Position = new PointLatLng(park.PosX, park.PosY);
+                    changeParkinfoShow(park);
                 }
             }
-        
-
         }
 
         private void uiSymbolButton1_Click(object sender, EventArgs e)
@@ -158,8 +175,14 @@ namespace projectT
                 gMapControl1.Zoom = Math.Max(currentZoom - 1, gMapControl1.MinZoom); // 防止低于最小缩放级别
             }
         }
-       
 
+        private void uiTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                selectPark();
+            }
+        }
     }
 
     public class Park
@@ -167,5 +190,9 @@ namespace projectT
         public string Location { get; set; }
         public double PosX { get; set; }
         public double PosY { get; set; }
+
+        public int MaxPost { get; set; }
+        
+        public int NowPost { get; set; }
     }
 }

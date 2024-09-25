@@ -36,20 +36,36 @@ namespace projectT
             this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uiLedLabel4 = new Sunny.UI.UILedLabel();
+            this.uiBattery1 = new Sunny.UI.UIBattery();
+            this.uiDigitalLabel1 = new Sunny.UI.UIDigitalLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.uiDigitalLabel1 = new Sunny.UI.UIDigitalLabel();
-            this.uiBattery1 = new Sunny.UI.UIBattery();
-            this.uiLedLabel4 = new Sunny.UI.UILedLabel();
             uiLine5 = new Sunny.UI.UILine();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // uiLine5
+            // 
+            uiLine5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            uiLine5.BackColor = System.Drawing.Color.Transparent;
+            uiLine5.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            uiLine5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            uiLine5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            uiLine5.LineColorGradient = true;
+            uiLine5.Location = new System.Drawing.Point(0, 87);
+            uiLine5.MinimumSize = new System.Drawing.Size(16, 16);
+            uiLine5.Name = "uiLine5";
+            uiLine5.Size = new System.Drawing.Size(740, 54);
+            uiLine5.TabIndex = 59;
+            uiLine5.Text = "剩余停车位";
             // 
             // gMapControl1
             // 
@@ -112,6 +128,7 @@ namespace projectT
             this.uiTextBox1.Watermark = "";
             this.uiTextBox1.GotFocus += new System.EventHandler(this.textBox1_GotFocus);
             this.uiTextBox1.LostFocus += new System.EventHandler(this.textBox1_LostFocus);
+            this.uiTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.uiTextBox1_KeyPress);
             // 
             // panel1
             // 
@@ -129,6 +146,87 @@ namespace projectT
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(743, 393);
             this.panel1.TabIndex = 3;
+            // 
+            // uiLedLabel4
+            // 
+            this.uiLedLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiLedLabel4.BackColor = System.Drawing.Color.Black;
+            this.uiLedLabel4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel4.ForeColor = System.Drawing.Color.Lime;
+            this.uiLedLabel4.IntervalOn = 3;
+            this.uiLedLabel4.Location = new System.Drawing.Point(266, 281);
+            this.uiLedLabel4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiLedLabel4.Name = "uiLedLabel4";
+            this.uiLedLabel4.Size = new System.Drawing.Size(208, 42);
+            this.uiLedLabel4.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLedLabel4.StyleCustomMode = true;
+            this.uiLedLabel4.TabIndex = 110;
+            this.uiLedLabel4.Text = "NULL";
+            // 
+            // uiBattery1
+            // 
+            this.uiBattery1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiBattery1.BackColor = System.Drawing.Color.Transparent;
+            this.uiBattery1.FillColor = System.Drawing.Color.Transparent;
+            this.uiBattery1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery1.Location = new System.Drawing.Point(480, 271);
+            this.uiBattery1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiBattery1.Name = "uiBattery1";
+            this.uiBattery1.Power = 23;
+            this.uiBattery1.Size = new System.Drawing.Size(91, 65);
+            this.uiBattery1.SymbolSize = 80;
+            this.uiBattery1.TabIndex = 109;
+            this.uiBattery1.Text = "uiBattery1";
+            // 
+            // uiDigitalLabel1
+            // 
+            this.uiDigitalLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiDigitalLabel1.BackColor = System.Drawing.Color.Black;
+            this.uiDigitalLabel1.DecimalPlaces = 0;
+            this.uiDigitalLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiDigitalLabel1.ForeColor = System.Drawing.Color.Lime;
+            this.uiDigitalLabel1.Location = new System.Drawing.Point(266, 147);
+            this.uiDigitalLabel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiDigitalLabel1.Name = "uiDigitalLabel1";
+            this.uiDigitalLabel1.Size = new System.Drawing.Size(208, 42);
+            this.uiDigitalLabel1.TabIndex = 108;
+            this.uiDigitalLabel1.Text = "uiDigitalLabel1";
+            this.uiDigitalLabel1.TextOffset = new System.Drawing.Point(6, 0);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(285, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 28);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "停车位使用率";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(249, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(236, 28);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "请选择一个停车场";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(296, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 28);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "停车场描述";
             // 
             // label1
             // 
@@ -182,102 +280,6 @@ namespace projectT
             this.uiSymbolButton1.TabIndex = 8;
             this.uiSymbolButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(296, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "停车场描述";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(261, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(236, 28);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "请选择一个停车场";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(285, 225);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 28);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "停车位使用率";
-            // 
-            // uiLine5
-            // 
-            uiLine5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            uiLine5.BackColor = System.Drawing.Color.Transparent;
-            uiLine5.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            uiLine5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            uiLine5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            uiLine5.LineColorGradient = true;
-            uiLine5.Location = new System.Drawing.Point(0, 87);
-            uiLine5.MinimumSize = new System.Drawing.Size(16, 16);
-            uiLine5.Name = "uiLine5";
-            uiLine5.Size = new System.Drawing.Size(740, 54);
-            uiLine5.TabIndex = 59;
-            uiLine5.Text = "剩余停车位";
-            // 
-            // uiDigitalLabel1
-            // 
-            this.uiDigitalLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uiDigitalLabel1.BackColor = System.Drawing.Color.Black;
-            this.uiDigitalLabel1.DecimalPlaces = 0;
-            this.uiDigitalLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiDigitalLabel1.ForeColor = System.Drawing.Color.Lime;
-            this.uiDigitalLabel1.Location = new System.Drawing.Point(266, 147);
-            this.uiDigitalLabel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiDigitalLabel1.Name = "uiDigitalLabel1";
-            this.uiDigitalLabel1.Size = new System.Drawing.Size(208, 42);
-            this.uiDigitalLabel1.TabIndex = 108;
-            this.uiDigitalLabel1.Text = "uiDigitalLabel1";
-            this.uiDigitalLabel1.TextOffset = new System.Drawing.Point(6, 0);
-            // 
-            // uiBattery1
-            // 
-            this.uiBattery1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uiBattery1.BackColor = System.Drawing.Color.Transparent;
-            this.uiBattery1.FillColor = System.Drawing.Color.Transparent;
-            this.uiBattery1.Font = new System.Drawing.Font("宋体", 12F);
-            this.uiBattery1.Location = new System.Drawing.Point(480, 271);
-            this.uiBattery1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiBattery1.Name = "uiBattery1";
-            this.uiBattery1.Power = 23;
-            this.uiBattery1.Size = new System.Drawing.Size(91, 65);
-            this.uiBattery1.SymbolSize = 80;
-            this.uiBattery1.TabIndex = 109;
-            this.uiBattery1.Text = "uiBattery1";
-            // 
-            // uiLedLabel4
-            // 
-            this.uiLedLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.uiLedLabel4.BackColor = System.Drawing.Color.Black;
-            this.uiLedLabel4.Font = new System.Drawing.Font("宋体", 12F);
-            this.uiLedLabel4.ForeColor = System.Drawing.Color.Lime;
-            this.uiLedLabel4.IntervalOn = 3;
-            this.uiLedLabel4.Location = new System.Drawing.Point(266, 281);
-            this.uiLedLabel4.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiLedLabel4.Name = "uiLedLabel4";
-            this.uiLedLabel4.Size = new System.Drawing.Size(208, 42);
-            this.uiLedLabel4.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLedLabel4.StyleCustomMode = true;
-            this.uiLedLabel4.TabIndex = 110;
-            this.uiLedLabel4.Text = "NULL";
             // 
             // InFormFindPark
             // 
