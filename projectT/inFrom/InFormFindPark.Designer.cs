@@ -43,6 +43,9 @@ namespace projectT
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.uiDigitalLabel1 = new Sunny.UI.UIDigitalLabel();
+            this.uiBattery1 = new Sunny.UI.UIBattery();
+            this.uiLedLabel4 = new Sunny.UI.UILedLabel();
             uiLine5 = new Sunny.UI.UILine();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -115,6 +118,9 @@ namespace projectT
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.uiLedLabel4);
+            this.panel1.Controls.Add(this.uiBattery1);
+            this.panel1.Controls.Add(this.uiDigitalLabel1);
             this.panel1.Controls.Add(uiLine5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
@@ -202,9 +208,10 @@ namespace projectT
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(64, 296);
+            this.label6.Location = new System.Drawing.Point(285, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(180, 28);
             this.label6.TabIndex = 3;
@@ -212,18 +219,65 @@ namespace projectT
             // 
             // uiLine5
             // 
-            uiLine5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            uiLine5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             uiLine5.BackColor = System.Drawing.Color.Transparent;
             uiLine5.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             uiLine5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             uiLine5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             uiLine5.LineColorGradient = true;
-            uiLine5.Location = new System.Drawing.Point(0, 100);
+            uiLine5.Location = new System.Drawing.Point(0, 87);
             uiLine5.MinimumSize = new System.Drawing.Size(16, 16);
             uiLine5.Name = "uiLine5";
             uiLine5.Size = new System.Drawing.Size(740, 54);
             uiLine5.TabIndex = 59;
             uiLine5.Text = "剩余停车位";
+            // 
+            // uiDigitalLabel1
+            // 
+            this.uiDigitalLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiDigitalLabel1.BackColor = System.Drawing.Color.Black;
+            this.uiDigitalLabel1.DecimalPlaces = 0;
+            this.uiDigitalLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiDigitalLabel1.ForeColor = System.Drawing.Color.Lime;
+            this.uiDigitalLabel1.Location = new System.Drawing.Point(266, 147);
+            this.uiDigitalLabel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiDigitalLabel1.Name = "uiDigitalLabel1";
+            this.uiDigitalLabel1.Size = new System.Drawing.Size(208, 42);
+            this.uiDigitalLabel1.TabIndex = 108;
+            this.uiDigitalLabel1.Text = "uiDigitalLabel1";
+            this.uiDigitalLabel1.TextOffset = new System.Drawing.Point(6, 0);
+            // 
+            // uiBattery1
+            // 
+            this.uiBattery1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiBattery1.BackColor = System.Drawing.Color.Transparent;
+            this.uiBattery1.FillColor = System.Drawing.Color.Transparent;
+            this.uiBattery1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiBattery1.Location = new System.Drawing.Point(480, 271);
+            this.uiBattery1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiBattery1.Name = "uiBattery1";
+            this.uiBattery1.Power = 23;
+            this.uiBattery1.Size = new System.Drawing.Size(91, 65);
+            this.uiBattery1.SymbolSize = 80;
+            this.uiBattery1.TabIndex = 109;
+            this.uiBattery1.Text = "uiBattery1";
+            // 
+            // uiLedLabel4
+            // 
+            this.uiLedLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiLedLabel4.BackColor = System.Drawing.Color.Black;
+            this.uiLedLabel4.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel4.ForeColor = System.Drawing.Color.Lime;
+            this.uiLedLabel4.IntervalOn = 3;
+            this.uiLedLabel4.Location = new System.Drawing.Point(266, 281);
+            this.uiLedLabel4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiLedLabel4.Name = "uiLedLabel4";
+            this.uiLedLabel4.Size = new System.Drawing.Size(208, 42);
+            this.uiLedLabel4.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLedLabel4.StyleCustomMode = true;
+            this.uiLedLabel4.TabIndex = 110;
+            this.uiLedLabel4.Text = "NULL";
             // 
             // InFormFindPark
             // 
@@ -261,5 +315,8 @@ namespace projectT
         private Label label6;
         private Label label4;
         private Label label3;
+        private Sunny.UI.UIDigitalLabel uiDigitalLabel1;
+        private Sunny.UI.UILedLabel uiLedLabel4;
+        private Sunny.UI.UIBattery uiBattery1;
     }
 }

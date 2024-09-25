@@ -89,7 +89,6 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\System.Valu
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\EntityFramework.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\EntityFramework.SqlServer.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\MySql.Data.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\Newtonsoft.Json.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\RestSharp.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\System.Buffers.xml
