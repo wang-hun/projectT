@@ -31,8 +31,8 @@ namespace projectT
         /// </summary>
         private void InitializeComponent()
         {
+            Sunny.UI.UILine uiLine5;
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
-
             this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,7 +40,12 @@ namespace projectT
             this.label2 = new System.Windows.Forms.Label();
             this.uiSymbolButton2 = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            uiLine5 = new Sunny.UI.UILine();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -110,9 +115,13 @@ namespace projectT
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(uiLine5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(106, 648);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(743, 357);
+            this.panel1.Size = new System.Drawing.Size(743, 393);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -121,7 +130,7 @@ namespace projectT
             this.label1.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(289, 602);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 26);
+            this.label1.Size = new System.Drawing.Size(404, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "选择一个停车场，查看相关信息";
             // 
@@ -132,7 +141,7 @@ namespace projectT
             this.label2.ForeColor = System.Drawing.Color.Green;
             this.label2.Location = new System.Drawing.Point(101, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(376, 26);
+            this.label2.Size = new System.Drawing.Size(404, 28);
             this.label2.TabIndex = 5;
             this.label2.Text = "输入查询信息，查询对应停车场";
             // 
@@ -168,6 +177,54 @@ namespace projectT
             this.uiSymbolButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(296, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 28);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "停车场描述";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(261, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(236, 28);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "请选择一个停车场";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(64, 296);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 28);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "停车位使用率";
+            // 
+            // uiLine5
+            // 
+            uiLine5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            uiLine5.BackColor = System.Drawing.Color.Transparent;
+            uiLine5.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            uiLine5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            uiLine5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            uiLine5.LineColorGradient = true;
+            uiLine5.Location = new System.Drawing.Point(0, 100);
+            uiLine5.MinimumSize = new System.Drawing.Size(16, 16);
+            uiLine5.Name = "uiLine5";
+            uiLine5.Size = new System.Drawing.Size(740, 54);
+            uiLine5.TabIndex = 59;
+            uiLine5.Text = "剩余停车位";
+            // 
             // InFormFindPark
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -184,6 +241,8 @@ namespace projectT
             this.Text = "InFormFindPark";
             this.Load += new System.EventHandler(this.InFormFindPark_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +258,8 @@ namespace projectT
         private System.Windows.Forms.Label label2;
         private Sunny.UI.UISymbolButton uiSymbolButton2;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private Label label6;
+        private Label label4;
+        private Label label3;
     }
 }
