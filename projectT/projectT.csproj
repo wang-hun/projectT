@@ -299,6 +299,8 @@
     <None Include="Resources\TheCiteMap.jpg" />
     <None Include="Resources\TheCiteMap.png" />
     <None Include="Resources\BlackMark.png" />
+    <None Include="Resources\flash.png" />
+    <None Include="Resources\flash_handing.png" />
     <Content Include="TT.ico" />
   </ItemGroup>
   <ItemGroup />
