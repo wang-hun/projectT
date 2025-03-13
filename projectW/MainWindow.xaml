@@ -8,13 +8,17 @@
         mc:Ignorable="d"
         Title="车辆停放模拟系统" Height="600" Width="1000" Icon="/W.ico" FontSize="24" Background="#87CEEB" 
         ResizeMode="NoResize" >
- 
+
     <Grid >
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/W.png" Opacity="0.4" Stretch="Uniform" />
         </Grid.Background>
-        <Grid>
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100*"/>
             </Grid.ColumnDefinitions>
@@ -28,11 +32,24 @@
                 </TextBlock.Foreground>
             </TextBlock>
         </Grid>
-        <Grid>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
-            <AduSkin:AduStepBar  ItemsSource="{Binding StepItems}" Progress="{Binding StepIndex,Mode=TwoWay}" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Column="1">
+                <AduSkin:AduStepBar  ItemsSource="{Binding StepItems}" Progress="{Binding StepIndex,Mode=TwoWay}" HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="2">
         </Grid>
     </Grid>
 </AduSkin:MetroWindow>
