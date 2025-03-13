@@ -1,0 +1,38 @@
+﻿<AduSkin:MetroWindow x:Class="projectW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin" 
+        xmlns:local="clr-namespace:projectW"
+        mc:Ignorable="d"
+        Title="车辆停放模拟系统" Height="600" Width="1000" Icon="/W.ico" FontSize="24" Background="#87CEEB" 
+        ResizeMode="NoResize" >
+ 
+    <Grid >
+        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/W.png" Opacity="0.4" Stretch="Uniform" />
+        </Grid.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <TextBlock FontStyle="Italic" FontSize="30">
+                <TextBlock.Text>W Company</TextBlock.Text>
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="#4169E1"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <AduSkin:AduStepBar  ItemsSource="{Binding StepItems}" Progress="{Binding StepIndex,Mode=TwoWay}" />
+        </Grid>
+    </Grid>
+</AduSkin:MetroWindow>
