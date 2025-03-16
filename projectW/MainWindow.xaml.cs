@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,24 @@ namespace projectW
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : MetroWindow, INotifyPropertyChanged
     {
-       
+   
         public ObservableCollection<string> StepItems { get; set; }
-        public int StepIndex { get; set; }
+        private int _stepIndex;
+        public int StepIndex
+        {
+            get => _stepIndex;
+            set
+            {
+                if (_stepIndex != value)
+                {
+                    _stepIndex = value;
+                    OnPropertyChanged(nameof(StepIndex));
+                    UpdateButtonStates(); // 更新按钮状态
+                }
+            }
+        }
         public MainWindow()
         {
            
@@ -37,6 +51,44 @@ namespace projectW
             StepItems.Add("第二步");
             StepItems.Add("第三步");
             StepItems.Add("第四步");
+            IsPreviousEnabled = false;
+            IsNextEnabled =true;
+
+        }
+
+        public bool IsPreviousEnabled { get; set; }
+        public bool IsNextEnabled { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void UpdateButtonStates()
+        {
+            // 根据StepIndex更新按钮状态
+            IsPreviousEnabled = StepIndex > 0;
+            IsNextEnabled = StepIndex < 3;
+
+            OnPropertyChanged(nameof(IsPreviousEnabled));
+            OnPropertyChanged(nameof(IsNextEnabled));
+        }
+
+        public void PreButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (StepIndex > 0) { 
+                StepIndex--;
+                stepBar.Progress = StepIndex;
+            }
+        }
+        public void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (StepIndex < 3) {
+                StepIndex++;
+                stepBar.Progress = StepIndex;
+            }
         }
     }
 }
