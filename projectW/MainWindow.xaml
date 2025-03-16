@@ -58,7 +58,7 @@
                 <RowDefinition Height="0.2*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-
+                <ContentControl x:Name="tab" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>

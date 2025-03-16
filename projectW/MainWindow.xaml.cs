@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AduSkin.Controls.Metro;
+using projectW.tab;
 
 
 namespace projectW
@@ -25,7 +26,12 @@ namespace projectW
     /// </summary>
     public partial class MainWindow : MetroWindow, INotifyPropertyChanged
     {
-   
+        private UserControl[] tabs={
+            new UserControl1(),
+            new UserControl2(),
+            new UserControl3(),
+            new UserControl4()
+        };
         public ObservableCollection<string> StepItems { get; set; }
         private int _stepIndex;
         public int StepIndex
@@ -53,7 +59,7 @@ namespace projectW
             StepItems.Add("第四步");
             IsPreviousEnabled = false;
             IsNextEnabled =true;
-
+            tab.Content = tabs[StepIndex];
         }
 
         public bool IsPreviousEnabled { get; set; }
@@ -74,6 +80,7 @@ namespace projectW
 
             OnPropertyChanged(nameof(IsPreviousEnabled));
             OnPropertyChanged(nameof(IsNextEnabled));
+            tab.Content = tabs[StepIndex];
         }
 
         public void PreButton_Click(object sender, RoutedEventArgs e)

@@ -19,3 +19,11 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\Microsoft.A
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\System.CodeDom.dll
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\Microsoft.AspNetCore.SystemWebAdapters.pdb
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\System.CodeDom.xml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl1.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl2.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl3.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl4.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl1.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl2.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl3.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\UserControl4.baml
