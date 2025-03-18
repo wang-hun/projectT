@@ -1,0 +1,13 @@
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.csproj.AssemblyReference.cache
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.GeneratedMSBuildEditorConfig.editorconfig
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.AssemblyInfoInputs.cache
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.AssemblyInfo.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.csproj.CoreCompileInputs.cache
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.sourcelink.json
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\bin\Debug\net8.0\ProjectP.deps.json
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\bin\Debug\net8.0\ProjectP.dll
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\bin\Debug\net8.0\ProjectP.pdb
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.dll
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\refint\ProjectP.dll
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ProjectP.pdb
+D:\系统默认\毕设\projectT\wang-hun\projectT\ProjectP\obj\Debug\net8.0\ref\ProjectP.dll
