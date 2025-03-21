@@ -22,6 +22,7 @@ namespace projectW.tab
     {
         public UserControl1()
         {
+           
             InitializeComponent();
         }
     }

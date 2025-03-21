@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AduSkin.Controls.Metro;
 using projectW.tab;
+using ProjectW;
 
 
 namespace projectW
@@ -33,6 +35,8 @@ namespace projectW
             new UserControl4()
         };
         public ObservableCollection<string> StepItems { get; set; }
+
+        public List<string> CarNumbers {  get; set; } 
         private int _stepIndex;
         public int StepIndex
         {
@@ -49,17 +53,43 @@ namespace projectW
         }
         public MainWindow()
         {
-           
+
             InitializeComponent();
             this.DataContext = this;
-            StepItems=new ObservableCollection<string>();
+            StepItems = new ObservableCollection<string>();
             StepItems.Add("第一步");
             StepItems.Add("第二步");
             StepItems.Add("第三步");
             StepItems.Add("第四步");
+            foreach (var tab in tabs) 
+            {
+                tab.DataContext = this;
+            }
             IsPreviousEnabled = false;
-            IsNextEnabled =true;
+            IsNextEnabled = true;
             tab.Content = tabs[StepIndex];
+            LoadBlcokChain();
+            LoadSQL();
+
+        }
+        private void LoadSQL() 
+        {
+            LoadCarNumber();
+
+        }
+        private void LoadBlcokChain()
+        {
+            BlockchainManager.startBlockChain("/BlockChain");
+
+        }
+        private void LoadCarNumber()
+        {
+            CarNumbers = new List<string>();
+            var dr = SQLClass.ExecuteReader("select CarNumber from cars");
+            while (dr.Read())
+            {
+                CarNumbers.Add(dr[0].ToString());
+            }
         }
 
         public bool IsPreviousEnabled { get; set; }
