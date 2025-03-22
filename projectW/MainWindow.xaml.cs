@@ -37,6 +37,7 @@ namespace projectW
         public ObservableCollection<string> StepItems { get; set; }
 
         public List<string> CarNumbers {  get; set; } 
+        public string CarNumber {  get; set; } 
         private int _stepIndex;
         public int StepIndex
         {
@@ -45,9 +46,25 @@ namespace projectW
             {
                 if (_stepIndex != value)
                 {
-                    _stepIndex = value;
-                    OnPropertyChanged(nameof(StepIndex));
-                    UpdateButtonStates(); // 更新按钮状态
+                  
+                    bool inputIsUull = false;
+                    switch (StepIndex)
+                    {
+                        case 0:
+                            if (CarNumber.IsNullOrEmpty())
+                            {
+                                inputIsUull = true;
+                                AduMessageBox.Show("请选择需要停放的车辆!", "提示", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            }
+                            break;
+                    }
+                    if (!inputIsUull)
+                    {
+                        _stepIndex = value;
+                        OnPropertyChanged(nameof(StepIndex));
+                        UpdateButtonStates(); // 更新按钮状态
+                       
+                    }
                 }
             }
         }
@@ -110,6 +127,7 @@ namespace projectW
 
             OnPropertyChanged(nameof(IsPreviousEnabled));
             OnPropertyChanged(nameof(IsNextEnabled));
+           
             tab.Content = tabs[StepIndex];
         }
 
