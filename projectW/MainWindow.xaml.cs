@@ -41,7 +41,7 @@ namespace projectW
                 var park = Parks.Where(pk=>pk.Name== value).First()??new Local();
                 if (!park.Name.IsNullOrEmpty()) 
                 {
-                Local= park.Name+"="+park.PosX+"+"+park.PosY;
+                Local= park.Name+"=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
                 }
             }
         }
