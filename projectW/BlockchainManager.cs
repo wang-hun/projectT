@@ -21,7 +21,9 @@
         /// </summary>
         public string TimeStamp { get; set; }
         /// <summary>
-        /// 停车位置
+        /// 停车位置 
+        /// 
+        /// 格式 停车场描述=PosX+PosY
         /// </summary>
         public string local { get; set; }
         /// <summary>

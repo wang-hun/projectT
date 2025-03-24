@@ -11,5 +11,19 @@
             <SolidColorBrush Color="#7FFFD4" Opacity="0.6"/>
         </Grid.Background>
         <TextBlock Text="2" FontSize="34"/>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="选择要停放的位置" FontSize="30" Foreground="Blue" HorizontalAlignment="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Grid.Column="1" ItemsSource="{Binding ParkNames}" 
+             SelectedItem="{Binding ParkName,Mode=TwoWay}" IsTextSearchEnabled="True" IsEditable="True" >
+
+                </ComboBox>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>
