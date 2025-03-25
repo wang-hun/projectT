@@ -49,7 +49,16 @@ namespace projectW
                 }
             }
         }
-        public string CarNumber { get; set; }
+        private string _carNumber;
+        public string CarNumber
+        {
+            get => _carNumber;
+            set
+            {
+                _carNumber = value;
+                OnPropertyChanged(nameof(CarNumber));
+            }
+        }
         private int _stepIndex;
         public int StepIndex
         {

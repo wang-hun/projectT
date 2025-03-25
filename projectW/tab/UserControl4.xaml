@@ -11,5 +11,15 @@
             <SolidColorBrush Color="#80CDCD" Opacity="0.6"/>
         </Grid.Background>
         <TextBlock Text="4" FontSize="34"/>
+        <StackPanel VerticalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="车牌号:" HorizontalAlignment="Right" FontSize="26" Foreground="#0008b0" Margin="0,0,20,0"/>
+                <TextBlock Grid.Column="1" Text="{Binding CarNumber}" HorizontalAlignment="Left" FontSize="26" Foreground="#7400a1"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>
