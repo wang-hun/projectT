@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:projectW.tab"
+             xmlns:local="clr-namespace:projectW.tab" xmlns:AduSkin="https://github.com/aduskin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="100,5,100,5">
@@ -11,5 +11,13 @@
             <SolidColorBrush Color="#40E0D0" Opacity="0.6"/>
         </Grid.Background>
         <TextBlock Text="3" FontSize="34"/>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="选择停放开始时间" FontSize="30" Foreground="Blue" HorizontalAlignment="Center"/>
+            <AduSkin:AduTimeBarNew  BorderThickness="0" Margin="10"  VerticalAlignment="Center" x:Name="timer1"/>
+            <!-- SelectedTime="{Binding StartTime}" -->
+            <TextBlock Text="选择停放结束时间" FontSize="30" Foreground="Blue" HorizontalAlignment="Center" />
+            <AduSkin:AduTimeBarNew  BorderThickness="0" Margin="10"  VerticalAlignment="Center"  x:Name="timer2" />
+            <!--SelectedTime="{Binding EndTime}" -->
+        </StackPanel>
     </Grid>
 </UserControl>

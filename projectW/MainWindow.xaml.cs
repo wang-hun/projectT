@@ -30,6 +30,10 @@ namespace projectW
         public List<string> CarNumbers { get; set; }
         public List<Local> Parks { get; set; }
         public List<string> ParkNames { get; set; }
+
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
         private string _parkName;
         public string ParkName
         {
@@ -38,10 +42,10 @@ namespace projectW
             {
                 _parkName = value;
                 OnPropertyChanged(nameof(ParkName));
-                var park = Parks.Where(pk=>pk.Name== value).First()??new Local();
-                if (!park.Name.IsNullOrEmpty()) 
+                var park = Parks.Where(pk => pk.Name == value).First() ?? new Local();
+                if (!park.Name.IsNullOrEmpty())
                 {
-                Local= park.Name+"=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
+                    Local = park.Name + "=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
                 }
             }
         }
@@ -72,6 +76,17 @@ namespace projectW
                                 {
                                     inputIsUull = true;
                                     AduMessageBox.Show("请选择需要停放的位置!", "提示", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                }
+                                break;
+                            case 2:
+                                var tab2 = (UserControl3)tabs[2];
+                                StartTime = tab2.timer1.SelectedTime;
+                                EndTime = tab2.timer2.SelectedTime;
+                                if (EndTime <= StartTime) 
+                                {
+                                    inputIsUull = true;
+                                    AduMessageBox.Show("结束时间应当晚于开始时间!", "提示", MessageBoxButton.OK, MessageBoxImage.Warning);
+
                                 }
                                 break;
                         }
