@@ -120,7 +120,7 @@
             };
 
             string json = JsonConvert.SerializeObject(block, settings);
-            string fileName = $"P_{block.Hash}.json";
+            string fileName = $"P_{block.Hash}.data";
             string fullPath = Path.Combine(SavePath, fileName);
 
             File.WriteAllText(fullPath, json);
@@ -139,7 +139,7 @@
                 NullValueHandling = NullValueHandling.Ignore
             };
 
-            foreach (var file in Directory.GetFiles(SavePath, "P_*.json"))
+            foreach (var file in Directory.GetFiles(SavePath, "P_*.data"))
             {
                 try
                 {
@@ -150,7 +150,7 @@
                 catch (JsonException ex)
                 {
                     // 处理格式错误的文件
-                    Console.WriteLine($"文件 {Path.GetFileName(file)} 解析失败: {ex.Message}");
+                  
                 }
             }
 
