@@ -31,9 +31,26 @@ namespace projectW
         public List<Local> Parks { get; set; }
         public List<string> ParkNames { get; set; }
 
-        public DateTime StartTime { get; set; }
-
-        public DateTime EndTime { get; set; }
+        public DateTime StartTime
+        {
+            get => _startTime;
+            set
+            {
+                _startTime = value;
+                OnPropertyChanged(nameof(StartTime));
+            }
+        }
+        private DateTime _startTime;
+        private DateTime _endTime;
+        public DateTime EndTime
+        {
+            get => _endTime;
+            set
+            {
+                _endTime = value;
+                OnPropertyChanged(nameof(EndTime));
+            }
+        }
         private string _parkName;
         public string ParkName
         {
