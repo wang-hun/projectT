@@ -25,6 +25,11 @@ namespace projectW.tab
         {
            
             InitializeComponent();
+          
+        }
+        public void renew() 
+        { 
+          this.comboBox1.SelectedIndex = -1;
         }
     }
 }

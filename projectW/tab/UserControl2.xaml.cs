@@ -20,9 +20,15 @@ namespace projectW.tab
     /// </summary>
     public partial class UserControl2 : UserControl
     {
+      
         public UserControl2()
         {
             InitializeComponent();
+           
+        }
+        public void renew()
+        {
+            this.combo.SelectedIndex = -1;
         }
     }
 }

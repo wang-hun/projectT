@@ -20,7 +20,7 @@
                     <ColumnDefinition Width="60*"/>
                     <ColumnDefinition Width="20*"/>
                 </Grid.ColumnDefinitions>
-                <ComboBox Grid.Column="1" ItemsSource="{Binding CarNumbers}" 
+                <ComboBox Grid.Column="1" ItemsSource="{Binding CarNumbers}"  x:Name="comboBox1" 
                    SelectedItem="{Binding CarNumber,Mode=TwoWay}" IsTextSearchEnabled="True" IsEditable="True" >
                     
                 </ComboBox>

@@ -24,5 +24,19 @@ namespace projectW.tab
         {
             InitializeComponent();
         }
+        public static readonly RoutedEvent CustomButtonClickEvent = EventManager.RegisterRoutedEvent(
+    "CustomButtonClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(UserControl4));
+
+        public event RoutedEventHandler CustomButtonClick
+        {
+            add { AddHandler(CustomButtonClickEvent, value); }
+            remove { RemoveHandler(CustomButtonClickEvent, value); }
+        }
+
+
+        private void MetroButton_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(CustomButtonClickEvent));
+        }
     }
 }

@@ -59,10 +59,13 @@ namespace projectW
             {
                 _parkName = value;
                 OnPropertyChanged(nameof(ParkName));
-                var park = Parks.Where(pk => pk.Name == value).First() ?? new Local();
-                if (!park.Name.IsNullOrEmpty())
+                if (!value.IsNullOrEmpty())
                 {
-                    Local = park.Name + "=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
+                    var park = Parks.Where(pk => pk.Name == value).First() ?? new Local();
+                    if (!park.Name.IsNullOrEmpty())
+                    {
+                        Local = park.Name + "=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
+                    }
                 }
             }
         }
@@ -108,7 +111,7 @@ namespace projectW
                                 var tab2 = (UserControl3)tabs[2];
                                 StartTime = tab2.timer1.SelectedTime;
                                 EndTime = tab2.timer2.SelectedTime;
-                                if (EndTime <= StartTime) 
+                                if (EndTime <= StartTime)
                                 {
                                     inputIsUull = true;
                                     AduMessageBox.Show("结束时间应当晚于开始时间!", "提示", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -146,7 +149,9 @@ namespace projectW
             tab.Content = tabs[StepIndex];
             LoadBlcokChain();
             LoadSQL();
-
+            //订阅确定按钮事件。
+            var userControl4 = tabs[3] as UserControl4;
+            userControl4.CustomButtonClick += IsOKButtonClick;
         }
         private void LoadSQL()
         {
@@ -224,6 +229,49 @@ namespace projectW
                 StepIndex++;
                 stepBar.Progress = StepIndex;
             }
+        }
+
+        private void IsOKButtonClick(object sender, RoutedEventArgs e)
+        {
+            var hash=BlockchainManager.creatBlock(Local);
+            SQLClass.ExecuteSql(
+                "INSERT INTO `carpark` ( `LicNumber`, `StartParkTime`, `EndParkTime`, `ParkLocal`) " +
+                "VALUES ( '"+ CarNumber + "', '"+StartTime+"', '"+EndTime+"', '"+hash+"')");
+            AduMessageBox.Show("停车事件已记录！", "提示");
+            
+            renew();
+        }
+        //重置
+        private void renew() 
+        {
+            // 重置步骤索引到初始状态
+            StepIndex = 0;
+            stepBar.Progress = 0;
+            tab.Content = tabs[0];
+
+
+            // 清空用户选择
+            CarNumber = string.Empty;
+            ParkName = string.Empty;
+            Local = string.Empty;
+
+            // 重置时间控件到默认值（保持与构造函数相同的逻辑）
+            StartTime = DateTime.Now.Date.AddHours(8);  // 假设原始默认开始时间
+            EndTime = DateTime.Now.Date.AddHours(20);   // 假设原始默认结束时间
+
+            // 强制刷新所有绑定（保持原有通知机制）
+            OnPropertyChanged(nameof(CarNumber));
+            OnPropertyChanged(nameof(ParkName));
+            OnPropertyChanged(nameof(Local));
+            OnPropertyChanged(nameof(StartTime));
+            OnPropertyChanged(nameof(EndTime));
+            var tabs0=tabs[0] as UserControl1;
+            tabs0.renew();
+            var tabs1 = tabs[1] as UserControl2;
+            tabs1.renew();
+            var tabs2 = tabs[2] as UserControl3;
+            tabs2.timer1.SelectedTime=DateTime.Now;
+            tabs2.timer2.SelectedTime=DateTime.Now;
         }
     }
 
