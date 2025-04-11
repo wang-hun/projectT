@@ -97,7 +97,8 @@ namespace projectT
         /// </summary>
         public static void start()
         {
-            //PublicClass.fromsRe.Add(0, new Form0());
+            userid = -1;
+            currFrom = null;
         }
         public static void loadInFrom() {
             infroms.ForEach(ifrom=> {

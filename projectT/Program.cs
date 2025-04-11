@@ -18,11 +18,15 @@ namespace projectT
          
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            PublicClass.start();
-            Application.Run(new LoadForm());
-            UIForm newFrom = PublicClass.loadForm();
-            if (newFrom == null) return;
-            Application.Run(newFrom); 
+         
+            while (true)
+            {
+                PublicClass.start();
+                Application.Run(new LoadForm());
+                UIForm newFrom = PublicClass.loadForm();
+                if (newFrom == null) return;
+                Application.Run(newFrom);
+            }
         }
         /// <summary>
         /// 关闭整个程序，除非出现运行错误，请勿使用！
