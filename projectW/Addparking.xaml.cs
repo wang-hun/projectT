@@ -16,7 +16,7 @@ namespace projectW
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : MetroWindow, INotifyPropertyChanged
+    public partial class Addparking : MetroWindow, INotifyPropertyChanged
     {
         private UserControl[] tabs ={
             new UserControl1(),
@@ -130,7 +130,7 @@ namespace projectW
                 }
             }
         }
-        public MainWindow()
+        public Addparking()
         {
 
             InitializeComponent();
@@ -273,6 +273,10 @@ namespace projectW
             tabs2.timer1.SelectedTime=DateTime.Now;
             tabs2.timer2.SelectedTime=DateTime.Now;
         }
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            App.CloseApplication();
+        }
     }
 
 
@@ -284,4 +288,5 @@ namespace projectW
 
 
     }
+
 }

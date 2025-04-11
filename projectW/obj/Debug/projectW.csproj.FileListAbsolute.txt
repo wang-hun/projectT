@@ -1,5 +1,4 @@
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\projectW.csproj.AssemblyReference.cache
-D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\MainWindow.g.cs
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\App.g.cs
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\projectW_MarkupCompile.cache
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\projectW_MarkupCompile.lref
@@ -7,7 +6,6 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\projectW.ex
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\projectW.exe
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\projectW.pdb
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\AduSkin.dll
-D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\MainWindow.baml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\projectW.g.resources
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\projectW.Properties.Resources.resources
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\projectW.csproj.GenerateResource.cache
@@ -72,3 +70,10 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\System.Nume
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\bin\Debug\RestSharp.xml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\Addparking.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\App.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\Addparking.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\SelectWindow.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\SelectWindow.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\InOutWindow.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\InOutWindow.baml

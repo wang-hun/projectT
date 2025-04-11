@@ -129,6 +129,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BlockchainManager.cs" />
+    <Compile Include="InOutWindow.xaml.cs">
+      <DependentUpon>InOutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectWindow.xaml.cs">
+      <DependentUpon>SelectWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQLClass.cs" />
     <Compile Include="tab\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
@@ -142,7 +148,7 @@
     <Compile Include="tab\UserControl4.xaml.cs">
       <DependentUpon>UserControl4.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Addparking.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -150,10 +156,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Addparking.xaml.cs">
+      <DependentUpon>Addparking.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="InOutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="tab\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +230,12 @@
       <Project>{11597722-ccf2-40a6-93ba-25a1553ece96}</Project>
       <Name>projectT</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AfterImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AfterImage2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
