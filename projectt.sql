@@ -11,7 +11,7 @@
  Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 20/03/2025 11:05:55
+ Date: 11/04/2025 21:59:43
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,7 @@ CREATE TABLE `carpark`  (
   PRIMARY KEY (`index`) USING BTREE,
   INDEX `LicNumber`(`LicNumber` ASC) USING BTREE,
   CONSTRAINT `LicNumber` FOREIGN KEY (`LicNumber`) REFERENCES `cars` (`CarNumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of carpark
