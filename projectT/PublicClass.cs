@@ -125,7 +125,8 @@ namespace projectT
                     break;
                 case 2:
                     ///监管者的嵌入式界面加载
-                  
+                    infroms.Add(new InFormPrivaInfo());
+                    fromsName.Add("个人信息");
                     break;
             }
         }
