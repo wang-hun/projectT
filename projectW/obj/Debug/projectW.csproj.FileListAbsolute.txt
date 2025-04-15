@@ -77,3 +77,7 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\SelectWindo
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\SelectWindow.baml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\InOutWindow.g.cs
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\InOutWindow.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\InTab.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\InTab.baml
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\OutTab.g.cs
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectW\obj\Debug\tab\OutTab.baml
