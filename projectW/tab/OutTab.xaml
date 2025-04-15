@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin" 
              xmlns:local="clr-namespace:projectW.tab"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -10,6 +11,24 @@
         <Grid.Background>
             <SolidColorBrush Color="#00FFFF" Opacity="0.6"/>
         </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="2">
 
+            <AduSkin:MetroButton Click="ReNew" >
+                <AduSkin:MetroButton.Background>
+                    <SolidColorBrush Color="#00FFFF" Opacity="0.6"/>
+                </AduSkin:MetroButton.Background>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Image Source="/Resources/renew.png" Stretch="Uniform"/>
+                    <TextBlock Text="刷新" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#000000"/>
+                </StackPanel>
+            </AduSkin:MetroButton>
+        </Grid>
     </Grid>
 </UserControl>

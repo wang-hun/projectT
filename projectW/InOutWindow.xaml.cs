@@ -1,20 +1,8 @@
 ﻿using AduSkin.Controls.Metro;
-using Org.BouncyCastle.Asn1.X509;
 using projectW.tab;
-using ProjectW;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace projectW
 {
@@ -26,11 +14,13 @@ namespace projectW
         private UserControl[] tabs = {
         new InTab(),
         new OutTab()
-        }; 
+        };
         public InOutWindow()
         {
             InitializeComponent();
             tab.Content = this.tabs[0];
+            tabs[0].DataContext = this;
+            tabs[1].DataContext = this;
         }
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -38,11 +28,12 @@ namespace projectW
         }
         private void InButtonClick(object sender, RoutedEventArgs e)
         {
-          tab.Content=this.tabs[0];
+            tab.Content = this.tabs[0];
         }
         private void OutButtonClick(object sender, RoutedEventArgs e)
         {
             tab.Content = this.tabs[1];
         }
+       
     }
 }

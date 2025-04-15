@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/buttin.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/buttout.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/renew.png")]
 
 

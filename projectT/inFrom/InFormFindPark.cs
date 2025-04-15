@@ -231,14 +231,5 @@ namespace projectT
         }
     }
 
-    public class Park
-    {
-        public string Location { get; set; }
-        public double PosX { get; set; }
-        public double PosY { get; set; }
-
-        public int MaxPost { get; set; }
-
-        public int NowPost { get; set; }
-    }
+   
 }

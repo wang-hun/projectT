@@ -24,5 +24,9 @@ namespace projectW.tab
         {
             InitializeComponent();
         }
+        private void ReNew(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }
