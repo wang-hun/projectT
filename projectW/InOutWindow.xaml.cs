@@ -24,7 +24,7 @@ namespace projectW
         }
         private void Window_Closed(object sender, EventArgs e)
         {
-            App.CloseApplication();
+          
         }
         private void InButtonClick(object sender, RoutedEventArgs e)
         {

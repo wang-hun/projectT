@@ -18,7 +18,12 @@ namespace projectW
         private void Window_Closed(object sender, EventArgs e)
         {
             if (!flag)
+            {
+                app.flag= true;
                 App.CloseApplication();
+               
+            }
+            flag = false;
         }
 
         private void MetroButton_Click(object sender, RoutedEventArgs e)

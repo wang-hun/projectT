@@ -14,34 +14,41 @@ namespace projectW
     /// </summary>
     public partial class App : Application
     {
-        public int pageIndex {  get; set; }
+        public int pageIndex { get; set; }
+        public Window mainWindow { get; set; }
+        public bool flag {  get; set; }
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
-            // 第一步：显示加载窗口
-            var selectWindow = new SelectWindow();
-            selectWindow.app=this;
-            selectWindow.ShowDialog(); // 模态显示
-
-            // 第二步：获取主窗口
-            var mainWindow = this.SelectShow(pageIndex);
-            if (mainWindow != null)
+            while (!flag)
             {
-                mainWindow.Show();
+                // 第一步：显示加载窗口
+                var selectWindow = new SelectWindow();
+                selectWindow.app = this;
+                selectWindow.ShowDialog(); // 模态显示
+
+                // 第二步：获取主窗口
+                mainWindow = this.SelectShow(pageIndex);
+                if (mainWindow != null)
+                {
+                    mainWindow.ShowDialog();
+                }
+                else 
+                { 
+                flag = true;
+                }
             }
-          
         }
 
-        public Window SelectShow(int x) 
+        public Window SelectShow(int x)
         {
             if (x == 1)
             {
                 return new Addparking();
             }
             else if (x == 2)
-            { 
-            return new InOutWindow();
+            {
+                return new InOutWindow();
             }
             else return null;
         }
