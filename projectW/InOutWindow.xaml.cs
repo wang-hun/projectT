@@ -21,6 +21,8 @@ namespace projectW
             tab.Content = this.tabs[0];
             tabs[0].DataContext = this;
             tabs[1].DataContext = this;
+            (tabs[0] as InTab).father = this;
+            (tabs[1] as OutTab).father = this;
         }
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -34,6 +36,9 @@ namespace projectW
         {
             tab.Content = this.tabs[1];
         }
-       
+        public void renew() 
+        { 
+        
+        }
     }
 }

@@ -20,13 +20,14 @@ namespace projectW.tab
     /// </summary>
     public partial class InTab : UserControl
     {
+        public InOutWindow father {  get; set; }
         public InTab()
         {
             InitializeComponent();
         }
         private void ReNew(object sender, RoutedEventArgs e)
         {
-           
+            father.renew();
         }
     }
 }
