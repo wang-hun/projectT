@@ -2,9 +2,11 @@
 using projectT;
 using ProjectT;
 using projectW.tab;
+using ProjectW;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -33,6 +35,26 @@ namespace projectW
             {
                 _parks = value;
                 OnPropertyChanged(nameof(Parks));
+            }
+        }
+        private ObservableCollection<string> _carnumbersIn;
+        public ObservableCollection<string> CarnumbersIn
+        {
+            get => _carnumbersIn;
+            set
+            {
+                _carnumbersIn = value;
+                OnPropertyChanged(nameof(CarnumbersIn));
+            }
+        }
+        private ObservableCollection<string> _carNumberIn;
+        public ObservableCollection<string> CarNumberIn
+        {
+            get => _carNumberIn;
+            set
+            {
+                _carNumberIn = value;
+                OnPropertyChanged(nameof(CarNumberIn));
             }
         }
         private ObservableCollection<Car> _cars;
@@ -66,6 +88,7 @@ namespace projectW
             _nowParks = new ObservableCollection<CarPark>();
             _parks = new ObservableCollection<Park>();
             _cars = new ObservableCollection<Car>();
+            CarnumbersIn = new ObservableCollection<string>();
             renew();
         }
         private void Window_Closed(object sender, EventArgs e)
@@ -95,7 +118,6 @@ namespace projectW
                 {
                     // 通过列名或索引直接提取值
                     carNumber = cars.GetString("carNumber"),      // 使用列名
-                                                                  //  Age = reader.GetInt32(reader.GetOrdinal("age")) // 通过列名获取索引再取值
                 };
 
                 Cars.Add(car);
@@ -129,6 +151,23 @@ namespace projectW
             cars.Close();
             parks.Close();
             nowparks.Close();
+            loadInTab();
+        }
+        private void loadInTab() 
+        {
+            
+            CarnumbersIn.Clear();
+            foreach (var c in Cars) 
+            {
+                var number = c.carNumber;
+                if (
+                    !NowParks.Where(p => !p.LicNumber.IsNullOrEmpty()&& p.LicNumber.Equals(number)).Any()//不包含
+                   ) 
+                {
+                    CarnumbersIn.Add(number);
+                }
+            }
+            CarNumberIn = null;
         }
     }
 }

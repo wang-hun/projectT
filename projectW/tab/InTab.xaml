@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:projectW.tab"
                xmlns:AduSkin="clr-namespace:AduSkin.Controls.Metro;assembly=AduSkin" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             DataContext="">
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!--" DataContext="InOutWindow"-->
     <Grid >
         <Grid.Background>
             <SolidColorBrush Color="#00FF7F" Opacity="0.6"/>
@@ -18,6 +18,14 @@
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock Text="选择车辆" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#ffffff"/>
+                <ComboBox ItemsSource="{Binding CarnumbersIn}"  x:Name="comboBox1" 
+                   SelectedItem="{Binding CarNumberIn,Mode=TwoWay}" IsTextSearchEnabled="True" IsEditable="True"/>
+            </StackPanel>
+
+        </Grid>
         <Grid Grid.Column="2">
 
             <AduSkin:MetroButton Click="ReNew" >
@@ -25,10 +33,10 @@
                     <SolidColorBrush Color="#00FF7F" Opacity="0.6"/>
                 </AduSkin:MetroButton.Background>
 
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                        <Image Source="/Resources/renew.png" Stretch="Uniform"/>
-                        <TextBlock Text="刷新" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#000000"/>
-                    </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Image Source="/Resources/renew.png" Stretch="Uniform"/>
+                    <TextBlock Text="刷新" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#000000"/>
+                </StackPanel>
             </AduSkin:MetroButton>
         </Grid>
     </Grid>
