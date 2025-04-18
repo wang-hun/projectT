@@ -11,7 +11,7 @@
  Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 11/04/2025 21:59:43
+ Date: 18/04/2025 09:22:26
 */
 
 SET NAMES utf8mb4;
@@ -106,6 +106,24 @@ CREATE TABLE `hospital_set`  (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for nowpark
+-- ----------------------------
+DROP TABLE IF EXISTS `nowpark`;
+CREATE TABLE `nowpark`  (
+  `carNumber` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `parkStartTime` datetime NOT NULL,
+  `local` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`carNumber`) USING BTREE,
+  INDEX `local`(`local` ASC) USING BTREE,
+  CONSTRAINT `carNumber` FOREIGN KEY (`carNumber`) REFERENCES `cars` (`CarNumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of nowpark
+-- ----------------------------
+INSERT INTO `nowpark` VALUES ('粤A65357', '2025-04-18 09:19:38', '73157d04081fd31af6bec4740d0ae11c014c64fc3e01f62646647a913c47e4b4');
+
+-- ----------------------------
 -- Table structure for order_info
 -- ----------------------------
 DROP TABLE IF EXISTS `order_info`;
@@ -161,14 +179,15 @@ CREATE TABLE `park`  (
   `PosY` double(255, 10) NULL DEFAULT NULL COMMENT '经度',
   PRIMARY KEY (`parkID`) USING BTREE,
   INDEX `manageID`(`manageID` ASC) USING BTREE,
+  INDEX `location`(`location` ASC) USING BTREE,
   CONSTRAINT `manageID` FOREIGN KEY (`manageID`) REFERENCES `users` (`user`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of park
 -- ----------------------------
-INSERT INTO `park` VALUES ('命莲寺地下', 1, 1000, 1, '002', 1, 32.0433360000, 120.8087170000);
-INSERT INTO `park` VALUES ('阳光赛马场', 2, 2000, 0, '002', 0, 32.0195748161, 120.8588790894);
+INSERT INTO `park` VALUES ('命莲寺地下', 1, 1000, 0, '002', 1, 32.0433360000, 120.8087170000);
+INSERT INTO `park` VALUES ('阳光赛马场', 2, 2000, 1, '002', 0, 32.0195748161, 120.8588790894);
 INSERT INTO `park` VALUES ('南', 3, 3000, 0, '002', 0, 32.0246687851, 120.9132957458);
 
 -- ----------------------------
