@@ -1,9 +1,13 @@
 ﻿using AduSkin.Controls.Metro;
+using Google.Protobuf.WellKnownTypes;
+using Mysqlx.Crud;
+using Org.BouncyCastle.Asn1.X509;
 using projectT;
 using ProjectT;
 using projectW.tab;
 using ProjectW;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -47,14 +51,34 @@ namespace projectW
                 OnPropertyChanged(nameof(CarnumbersIn));
             }
         }
-        private ObservableCollection<string> _carNumberIn;
-        public ObservableCollection<string> CarNumberIn
+        private string _carNumberIn;
+        public string CarNumberIn
         {
             get => _carNumberIn;
             set
             {
                 _carNumberIn = value;
                 OnPropertyChanged(nameof(CarNumberIn));
+            }
+        }
+        private ObservableCollection<string> _parksIn;
+        public ObservableCollection<string> ParksIn
+        {
+            get => _parksIn;
+            set
+            {
+                _parksIn = value;
+                OnPropertyChanged(nameof(ParksIn));
+            }
+        }
+        private string _parkIn;
+        public string ParkIn
+        {
+            get => _parkIn;
+            set
+            {
+                _parkIn = value;
+                OnPropertyChanged(nameof(ParkIn));
             }
         }
         private ObservableCollection<Car> _cars;
@@ -89,6 +113,8 @@ namespace projectW
             _parks = new ObservableCollection<Park>();
             _cars = new ObservableCollection<Car>();
             CarnumbersIn = new ObservableCollection<string>();
+            ParksIn = new ObservableCollection<string>();
+            BlockchainManager.startBlockChain("/BlockChain");
             renew();
         }
         private void Window_Closed(object sender, EventArgs e)
@@ -97,10 +123,12 @@ namespace projectW
         }
         private void InButtonClick(object sender, RoutedEventArgs e)
         {
+            renew();
             tab.Content = this.tabs[0];
         }
         private void OutButtonClick(object sender, RoutedEventArgs e)
         {
+            renew();
             tab.Content = this.tabs[1];
         }
         public void renew()
@@ -153,21 +181,52 @@ namespace projectW
             nowparks.Close();
             loadInTab();
         }
-        private void loadInTab() 
+        private void loadInTab()
         {
-            
+
             CarnumbersIn.Clear();
-            foreach (var c in Cars) 
+            ParksIn.Clear();
+            foreach (var c in Cars)
             {
                 var number = c.carNumber;
                 if (
-                    !NowParks.Where(p => !p.LicNumber.IsNullOrEmpty()&& p.LicNumber.Equals(number)).Any()//不包含
-                   ) 
+                    !NowParks.Where(p => !p.LicNumber.IsNullOrEmpty() && p.LicNumber.Equals(number)).Any()//不包含
+                   )
                 {
                     CarnumbersIn.Add(number);
                 }
             }
+            foreach (var p in Parks.Where(p => p.MaxPost > p.NowPost).Where(p=>p.Opening).Select(p => p.Location))
+            {
+
+                ParksIn.Add(p);
+            }
             CarNumberIn = null;
+            ParkIn = null;
+        }
+        public bool SaveInPark()
+        {
+            if (!ParkIn.IsNullOrEmpty() && !CarNumberIn.IsNullOrEmpty())
+            {
+                var park = Parks.Where(p => p.Location == ParkIn).First();
+
+                SQLClass.ExecuteSql("UPDATE `park` SET `nowParking` = " + (park.NowPost + 1) +
+                                      " WHERE `location` ='" + park.Location+ "'");
+                var hash = BlockchainManager.creatBlock(park.Location);
+
+               SQLClass.ExecuteSql("INSERT INTO nowpark(carNumber, parkStartTime, local)VALUES(" +
+                   "\"" + CarNumberIn + "\",\"" + DateTime.Now + "\",\"" + hash + "\""+ 
+                   ")");
+                AduMessageBox.Show("停车事件已记录！", "提示");
+                return true;
+            }
+            else
+            {
+                AduMessageBox.Show("选项不能为空！", "提示");
+                return false;
+
+            }
+
         }
     }
 }

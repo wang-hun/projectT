@@ -20,7 +20,7 @@ namespace projectW.tab
     /// </summary>
     public partial class InTab : UserControl
     {
-        public InOutWindow father {  get; set; }
+        public InOutWindow father { get; set; }
         public InTab()
         {
             InitializeComponent();
@@ -28,6 +28,16 @@ namespace projectW.tab
         private void ReNew(object sender, RoutedEventArgs e)
         {
             father.renew();
+        }
+
+        private void MetroButton_Click(object sender, RoutedEventArgs e)
+        {
+            ///生成记录
+            if (father.SaveInPark())
+            {
+               
+                father.renew();
+            }
         }
     }
 }

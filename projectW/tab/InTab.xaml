@@ -19,10 +19,18 @@
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="1">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
                 <TextBlock Text="选择车辆" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#ffffff"/>
                 <ComboBox ItemsSource="{Binding CarnumbersIn}"  x:Name="comboBox1" 
                    SelectedItem="{Binding CarNumberIn,Mode=TwoWay}" IsTextSearchEnabled="True" IsEditable="True"/>
+                <TextBlock Text="选择停车场" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#ffffff"/>
+                <ComboBox ItemsSource="{Binding ParksIn}"  x:Name="comboBox2" 
+    SelectedItem="{Binding ParkIn,Mode=TwoWay}" IsTextSearchEnabled="True" IsEditable="True"/>
+                <AduSkin:MetroButton Margin="0,20,0,0" Content="生成停入记录" Foreground="#ffffff" Click="MetroButton_Click"> 
+                    <AduSkin:MetroButton.Background>
+                        <ImageBrush ImageSource="/Resources/AfterImage2.png" Stretch="Uniform" />
+                    </AduSkin:MetroButton.Background>
+                </AduSkin:MetroButton>
             </StackPanel>
 
         </Grid>
