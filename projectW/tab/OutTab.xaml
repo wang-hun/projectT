@@ -17,6 +17,21 @@
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                <TextBlock Text="选择车辆" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#ffffff"/>
+                <ComboBox ItemsSource="{Binding CarnumbersOut}"  x:Name="comboBox1" 
+               SelectedItem="{Binding CarNumberOut,Mode=TwoWay}" IsTextSearchEnabled="True" IsEditable="True" SelectionChanged="SelectionChanged"/>
+                <TextBlock Text="停车场为" VerticalAlignment="Center" FontSize="34" HorizontalAlignment="Center" Foreground="#ffffff"/>
+                <Label x:Name="Label" Content="{Binding ParkOut,Mode=TwoWay}" Foreground="#ff4000"  HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="26"/>
+                <AduSkin:MetroButton Margin="0,20,0,0" Content="生成开出记录" Foreground="#ffffff" Click="MetroButton_Click">
+                    <AduSkin:MetroButton.Background>
+                        <ImageBrush ImageSource="/Resources/AfterImage.png" Stretch="Uniform" />
+                    </AduSkin:MetroButton.Background>
+                </AduSkin:MetroButton>
+            </StackPanel>
+
+        </Grid>
         <Grid Grid.Column="2">
 
             <AduSkin:MetroButton Click="ReNew" >
@@ -31,4 +46,5 @@
             </AduSkin:MetroButton>
         </Grid>
     </Grid>
+
 </UserControl>

@@ -51,6 +51,16 @@ namespace projectW
                 OnPropertyChanged(nameof(CarnumbersIn));
             }
         }
+        private ObservableCollection<string> _carnumbersOut;
+        public ObservableCollection<string> CarnumbersOut
+        {
+            get => _carnumbersOut;
+            set
+            {
+                _carnumbersOut = value;
+                OnPropertyChanged(nameof(CarnumbersOut));
+            }
+        }
         private string _carNumberIn;
         public string CarNumberIn
         {
@@ -59,6 +69,16 @@ namespace projectW
             {
                 _carNumberIn = value;
                 OnPropertyChanged(nameof(CarNumberIn));
+            }
+        }
+        private string _carNumberOut;
+        public string CarNumberOut
+        {
+            get => _carNumberOut;
+            set
+            {
+                _carNumberOut = value;
+                OnPropertyChanged(nameof(CarNumberOut));
             }
         }
         private ObservableCollection<string> _parksIn;
@@ -79,6 +99,16 @@ namespace projectW
             {
                 _parkIn = value;
                 OnPropertyChanged(nameof(ParkIn));
+            }
+        }
+        private string _parkOut;
+        public string ParkOut
+        {
+            get => _parkOut;
+            set
+            {
+                _parkOut = value;
+                OnPropertyChanged(nameof(ParkOut));
             }
         }
         private ObservableCollection<Car> _cars;
@@ -104,15 +134,16 @@ namespace projectW
         public InOutWindow()
         {
             InitializeComponent();
+            (tabs[0] as InTab).father = this;
+            (tabs[1] as OutTab).father = this;
             tab.Content = this.tabs[0];
             tabs[0].DataContext = this;
             tabs[1].DataContext = this;
-            (tabs[0] as InTab).father = this;
-            (tabs[1] as OutTab).father = this;
             _nowParks = new ObservableCollection<CarPark>();
             _parks = new ObservableCollection<Park>();
             _cars = new ObservableCollection<Car>();
             CarnumbersIn = new ObservableCollection<string>();
+            CarnumbersOut = new ObservableCollection<string>();
             ParksIn = new ObservableCollection<string>();
             BlockchainManager.startBlockChain("/BlockChain");
             renew();
@@ -180,6 +211,7 @@ namespace projectW
             parks.Close();
             nowparks.Close();
             loadInTab();
+            loadOutTab();
         }
         private void loadInTab()
         {
@@ -196,7 +228,7 @@ namespace projectW
                     CarnumbersIn.Add(number);
                 }
             }
-            foreach (var p in Parks.Where(p => p.MaxPost > p.NowPost).Where(p=>p.Opening).Select(p => p.Location))
+            foreach (var p in Parks.Where(p => p.MaxPost > p.NowPost).Where(p => p.Opening).Select(p => p.Location))
             {
 
                 ParksIn.Add(p);
@@ -204,19 +236,78 @@ namespace projectW
             CarNumberIn = null;
             ParkIn = null;
         }
+        private void loadOutTab()
+        {
+
+            CarnumbersOut.Clear();
+
+            foreach (var p in NowParks)
+            {
+                CarnumbersOut.Add(p.LicNumber);
+            }
+            CarNumberOut = null;
+            ParkOut = null;
+        }
         public bool SaveInPark()
         {
             if (!ParkIn.IsNullOrEmpty() && !CarNumberIn.IsNullOrEmpty())
             {
                 var park = Parks.Where(p => p.Location == ParkIn).First();
-
+                var parkDate = park.Location + "=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
                 SQLClass.ExecuteSql("UPDATE `park` SET `nowParking` = " + (park.NowPost + 1) +
-                                      " WHERE `location` ='" + park.Location+ "'");
-                var hash = BlockchainManager.creatBlock(park.Location);
+                                      " WHERE `location` ='" + park.Location + "'");
+                var hash = BlockchainManager.creatBlock(parkDate);
 
-               SQLClass.ExecuteSql("INSERT INTO nowpark(carNumber, parkStartTime, local)VALUES(" +
-                   "\"" + CarNumberIn + "\",\"" + DateTime.Now + "\",\"" + hash + "\""+ 
-                   ")");
+                SQLClass.ExecuteSql("INSERT INTO nowpark(carNumber, parkStartTime, local)VALUES(" +
+                    "\"" + CarNumberIn + "\",\"" + DateTime.Now + "\",\"" + hash + "\"" +
+                    ")");
+                AduMessageBox.Show("停车事件已记录！", "提示");
+                return true;
+            }
+            else
+            {
+                AduMessageBox.Show("选项不能为空！", "提示");
+                return false;
+
+            }
+
+        }
+
+        /// <summary>
+        /// 开出模拟中，选择车辆后，显示在哪个停车场
+        /// </summary>
+        public void showThePark()
+        {
+            if (!CarNumberOut.IsNullOrEmpty())
+            {
+                var parkDate = NowParks.Where(p => p.LicNumber.Equals(CarNumberOut)).First();
+                if (parkDate != null)
+                {
+                    var block = BlockchainManager._blockChain.Where(b => b.Hash.Equals(parkDate.ParkLocal)).First();
+                    if (block != null)
+                    {
+                        ParkOut = block.local.Split('=')[0];
+                    }
+                    //else
+                    //区块链损坏，我也在想应该怎么处理
+                }
+            }
+        }
+
+        public bool SaveOutPark()
+        {
+            if (!CarNumberOut.IsNullOrEmpty())
+            {
+                var park = Parks.Where(p => p.Location == ParkOut).First();
+                var parkDate = park.Location + "=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
+                var nowParkDate = NowParks.Where(p => p.LicNumber.Equals(CarNumberOut)).First();
+                SQLClass.ExecuteSql("UPDATE `park` SET `nowParking` = " + (park.NowPost + 1) +
+                                      " WHERE `location` ='" + park.Location + "'");
+                var hash = BlockchainManager.creatBlock(parkDate);
+                SQLClass.ExecuteSql(
+              "INSERT INTO `carpark` ( `LicNumber`, `StartParkTime`, `EndParkTime`, `ParkLocal`) " +
+              "VALUES ( '" + CarNumberOut + "', '" + nowParkDate.StartParkTime + "', '" + DateTime.Now + "', '" + hash + "')");
+                SQLClass.ExecuteSql("DELETE FROM nowpark WHERE carNumber = \"" + CarNumberOut + "\"");
                 AduMessageBox.Show("停车事件已记录！", "提示");
                 return true;
             }

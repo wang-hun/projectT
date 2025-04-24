@@ -9,7 +9,7 @@
     using System.Runtime.CompilerServices;
     using System.Linq;
 
-    public struct Block
+    public class Block
     {
         /// <summary>
         /// 区块位置

@@ -29,5 +29,21 @@ namespace projectW.tab
         {
             father.renew();
         }
+
+        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            father.showThePark();
+        }
+        private void MetroButton_Click(object sender, RoutedEventArgs e)
+        {
+            /////生成记录
+            if (father.SaveOutPark())
+            {
+
+                father.renew();
+            }
+        }
+
+
     }
 }
