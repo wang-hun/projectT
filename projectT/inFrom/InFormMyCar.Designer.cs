@@ -46,11 +46,17 @@ namespace projectT
             this.CarType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiImageButton2 = new Sunny.UI.UIImageButton();
+            this.uiImageButton3 = new Sunny.UI.UIImageButton();
+            this.uiLedLabel = new Sunny.UI.UILine();
+            this.uiImageButton4 = new Sunny.UI.UIImageButton();
+            this.uiLine1 = new Sunny.UI.UILine();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton4)).BeginInit();
             this.SuspendLayout();
             // 
             // uiAvatar1
@@ -273,10 +279,84 @@ namespace projectT
             this.uiImageButton2.Text = "删除车辆";
             this.uiImageButton2.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
+            // uiImageButton3
+            // 
+            this.uiImageButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.uiImageButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uiImageButton3.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.uiImageButton3.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiImageButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.uiImageButton3.Image = global::projectT.Properties.Resources.flash;
+            this.uiImageButton3.ImageHover = global::projectT.Properties.Resources.flash_handing;
+            this.uiImageButton3.ImageOffset = new System.Drawing.Point(10, 0);
+            this.uiImageButton3.Location = new System.Drawing.Point(793, 333);
+            this.uiImageButton3.Name = "uiImageButton3";
+            this.uiImageButton3.Size = new System.Drawing.Size(133, 133);
+            this.uiImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.uiImageButton3.TabIndex = 12;
+            this.uiImageButton3.TabStop = false;
+            this.uiImageButton3.Text = null;
+            this.uiImageButton3.Click += new System.EventHandler(this.uiImageButton3_Click);
+            // 
+            // uiLedLabel
+            // 
+            this.uiLedLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiLedLabel.BackColor = System.Drawing.Color.Transparent;
+            this.uiLedLabel.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLedLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLedLabel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.uiLedLabel.LineColor2 = System.Drawing.Color.White;
+            this.uiLedLabel.LineSize = 6;
+            this.uiLedLabel.Location = new System.Drawing.Point(793, 472);
+            this.uiLedLabel.MinimumSize = new System.Drawing.Size(16, 16);
+            this.uiLedLabel.Name = "uiLedLabel";
+            this.uiLedLabel.Size = new System.Drawing.Size(133, 26);
+            this.uiLedLabel.TabIndex = 95;
+            this.uiLedLabel.Text = "刷新";
+            // 
+            // uiImageButton4
+            // 
+            this.uiImageButton4.BackColor = System.Drawing.Color.Transparent;
+            this.uiImageButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uiImageButton4.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.uiImageButton4.Font = new System.Drawing.Font("宋体", 16.27826F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiImageButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.uiImageButton4.Image = global::projectT.Properties.Resources.where;
+            this.uiImageButton4.ImageHover = global::projectT.Properties.Resources.where_handing;
+            this.uiImageButton4.ImageOffset = new System.Drawing.Point(10, 0);
+            this.uiImageButton4.Location = new System.Drawing.Point(25, 333);
+            this.uiImageButton4.Name = "uiImageButton4";
+            this.uiImageButton4.Size = new System.Drawing.Size(133, 133);
+            this.uiImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.uiImageButton4.TabIndex = 96;
+            this.uiImageButton4.TabStop = false;
+            this.uiImageButton4.Text = null;
+            this.uiImageButton4.Click += new System.EventHandler(this.uiImageButton4_Click);
+            // 
+            // uiLine1
+            // 
+            this.uiLine1.BackColor = System.Drawing.Color.Transparent;
+            this.uiLine1.Font = new System.Drawing.Font("宋体", 12F);
+            this.uiLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLine1.LineColor = System.Drawing.Color.Red;
+            this.uiLine1.LineColor2 = System.Drawing.Color.White;
+            this.uiLine1.LineSize = 6;
+            this.uiLine1.Location = new System.Drawing.Point(25, 472);
+            this.uiLine1.MinimumSize = new System.Drawing.Size(16, 16);
+            this.uiLine1.Name = "uiLine1";
+            this.uiLine1.Size = new System.Drawing.Size(133, 26);
+            this.uiLine1.TabIndex = 97;
+            this.uiLine1.Text = "寻找车辆";
+            // 
             // InFormMyCar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(938, 894);
+            this.Controls.Add(this.uiLine1);
+            this.Controls.Add(this.uiImageButton4);
+            this.Controls.Add(this.uiLedLabel);
+            this.Controls.Add(this.uiImageButton3);
             this.Controls.Add(this.uiImageButton2);
             this.Controls.Add(this.uiImageButton1);
             this.Controls.Add(this.uiDataGridView1);
@@ -290,6 +370,8 @@ namespace projectT
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uiImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +390,9 @@ namespace projectT
         private System.Windows.Forms.DataGridViewTextBoxColumn CarType;
         private Sunny.UI.UIImageButton uiImageButton1;
         private Sunny.UI.UIImageButton uiImageButton2;
+        private Sunny.UI.UIImageButton uiImageButton3;
+        private Sunny.UI.UILine uiLedLabel;
+        private Sunny.UI.UIImageButton uiImageButton4;
+        private Sunny.UI.UILine uiLine1;
     }
 }

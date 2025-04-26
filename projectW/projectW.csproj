@@ -129,7 +129,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BlockchainManager.cs" />
     <Compile Include="InOutWindow.xaml.cs">
       <DependentUpon>InOutWindow.xaml</DependentUpon>
     </Compile>

@@ -181,6 +181,12 @@
   <data name="TT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TT.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="where" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\where.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="where_handing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\where_handing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="YESOD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\YESOD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

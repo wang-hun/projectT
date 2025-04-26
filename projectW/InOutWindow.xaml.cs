@@ -5,7 +5,6 @@ using Org.BouncyCastle.Asn1.X509;
 using projectT;
 using ProjectT;
 using projectW.tab;
-using ProjectW;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

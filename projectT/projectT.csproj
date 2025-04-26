@@ -159,6 +159,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlockchainManager.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="CarPark.cs" />
     <Compile Include="MyDialog\AddParkLocation.cs">
@@ -333,6 +334,8 @@
     <None Include="Resources\BlackMark.png" />
     <None Include="Resources\flash.png" />
     <None Include="Resources\flash_handing.png" />
+    <None Include="Resources\where.png" />
+    <None Include="Resources\where_handing.png" />
     <Content Include="TT.ico" />
   </ItemGroup>
   <ItemGroup />
