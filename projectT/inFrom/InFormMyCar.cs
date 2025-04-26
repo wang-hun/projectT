@@ -139,7 +139,35 @@ namespace projectT
 
         private void uiImageButton4_Click(object sender, EventArgs e)
         {
+            if (uiDataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = uiDataGridView1.SelectedRows[0];
 
+                // 获取第一列的值（根据实际情况调整列索引）
+                string cNumer = selectedRow.Cells[2].Value.ToString();
+                FindCar(cNumer);
+            }
+            else
+            {
+
+                this.ShowErrorTip("请在表格中选中一行，你要查询的车辆。");
+            }
+
+        }
+        private void FindCar(string cNumber)
+        {
+            var dr = SQLClass.ExecuteReader("select * from nowpark where carNumber='" + cNumber + "'");
+            if (dr.Read())
+            {
+                string carNumber = dr["carNumber"].ToString();
+                DateTime parkTime = Convert.ToDateTime(dr["parkStartTime"]);
+                string hashValue = dr["local"].ToString();
+                ///TODO 新建一个显示地图位置的窗体
+            }
+            else 
+            {
+                this.ShowInfoTip("该车目前未停在任何停车场。");
+            }
         }
     }
 }
