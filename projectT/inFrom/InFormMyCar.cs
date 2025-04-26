@@ -74,6 +74,7 @@ namespace projectT
         private void uiSymbolButton2_Click(object sender, EventArgs e)
         {
             string str=null;
+            this.ShowInfoDialog("提示", "请上传车牌照片。");
             OpenFileDialog openFileDialog = new OpenFileDialog();
             // 设置文件筛选器
             openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
@@ -82,12 +83,23 @@ namespace projectT
             {
                 // 获取到用户选择的图片文件路径
                 string imagePath = openFileDialog.FileName;
-
-
                 str = CarIdentity.getNumber(imagePath);
             }
             else {
                 return;
+            }
+            var carNumbers = new List<string>();
+            using (MySqlDataReader reader = SQLClass.ExecuteReader("SELECT CarNumber FROM cars"))
+            {
+                while (reader.Read())
+                {
+                    carNumbers.Add(reader.GetString(0));
+                }
+            }
+            if(carNumbers.Contains(str))
+            {
+                this.ShowErrorDialog("错误！", "该车辆已被其他人添加！");
+                return; 
             }
             if (str != null)
             {
