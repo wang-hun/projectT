@@ -142,3 +142,4 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\System.Diag
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\bin\Debug\System.IO.Pipelines.xml
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.csproj.SuggestedBindingRedirects.cache
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.exe.config
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.WhereMyCar.resources

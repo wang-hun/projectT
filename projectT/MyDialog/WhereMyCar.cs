@@ -17,22 +17,40 @@ namespace projectT
 {
     public partial class WhereMyCar : UIEditForm
     {
-        public WhereMyCar()
+        private DateTime startTime { get; set; }
+        private DateTime endTime { get; set; }
+        private string carNmuber { get; set; }
+        private string local { get; set; }
+        public double PosX { get; set; }
+        public double PosY { get; set; }
+
+        public WhereMyCar(string carNmuber, string locals, DateTime startTime, DateTime endTime = default)
         {
             InitializeComponent();
+            this.carNmuber = carNmuber;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            var parts = locals.Split(new[] { '=', '+' });
+            local = parts[0];
+            PosX = double.Parse(parts[1]);
+            PosY = double.Parse(parts[2]);
+            uiLabel1.Text = this.carNmuber;
+            uiLabel2.Text = this.local;
+            uiLabel3.Text = this.startTime.ToString("yy年MM月dd日 HH:mm:ss");
+            if (this.endTime != default)
+                uiLabel4.Text = this.endTime.ToString("yy年MM月dd日 HH:mm:ss");
+            else
+            {
+                uiLabel4.Text = "该车目前并未开出。";
+                uiLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ff007f");
+            }
         }
 
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        
-            PosX = 0;
-            PosY = 0;
-        }
+
         private PointLatLng mouseDownPos;
         GMapOverlay markers = new GMapOverlay("lay");
-        public static double PosX = 0;
-        public static double PosY = 0;
+
         private void gMapControl1_Load(object sender, EventArgs e)
         {
             string mapPath = Application.StartupPath + "\\MapOfTheCity.gmdb";
@@ -47,14 +65,20 @@ namespace projectT
             gMapControl1.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;//鼠标缩放模式
             gMapControl1.Position = new PointLatLng(32.043336, 120.808717);//地图中心坐标
             this.gMapControl1.Overlays.Add(markers);//增加标记图层
+            var pos = new PointLatLng(PosX, PosY); // 注意检查经纬度是否对应XY
+            var marker = new GMarkerGoogle(pos, GMarkerGoogleType.red);
+            marker.ToolTipText = local;
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+
+            // 将标注添加到图层
+            markers.Markers.Add(marker);
+            gMapControl1.Position = pos; // 可选：将地图中心定位到标注点
+            this.gMapControl1.Overlays.Add(markers);
         }
 
-        private void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            
-        }
 
-       
+
+
     }
 }
 

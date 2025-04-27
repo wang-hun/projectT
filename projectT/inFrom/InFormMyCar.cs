@@ -163,6 +163,16 @@ namespace projectT
                 DateTime parkTime = Convert.ToDateTime(dr["parkStartTime"]);
                 string hashValue = dr["local"].ToString();
                 ///TODO 新建一个显示地图位置的窗体
+                var locals = BlockchainManager.QueryBlockByHash(hashValue);
+                if (locals.isValid == true)
+                {
+                    using (var newWIndows = new WhereMyCar(carNumber, locals.local, parkTime)) 
+                    { 
+                       
+                        newWIndows.ShowDialog();
+
+                    }
+                }
             }
             else 
             {
