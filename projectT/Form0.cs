@@ -63,7 +63,7 @@ namespace projectT
             //Aside.CreateNode("Page2", 1002);
             //Aside.CreateNode("Page3", 1003);
             #endregion
-            PublicClass.loadInFrom();
+            PublicClass.LoadInFrom();
             for (int i=0;i<PublicClass.infroms.Count ;i++)
             {
                 AddPage(PublicClass.infroms[i], inFromID);

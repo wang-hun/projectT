@@ -139,7 +139,7 @@
   <data name="reFlashButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAYAAADB0SsLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAcvlJREFUeF7t3Q98VPWB7/2Ubnrz4MPTuVj6zL3csubF87Dysututq6VLWsX1i4r
+        vgAADr4B6kKxwAAAcvlJREFUeF7t3Q98VPWB7/2Ubnrz4MPTuVj6zL3csubF87Dysututq6VLWsX1i4r
         1XpNizzQSy1yUYFFxSwqIlYxpZVGqkixUgqKILtocJfe2C1dXBYXxOYSo6kRjA6GhEwmmeRkkpk583+e
         7/d3fr8zvxlOAgiEJJzzen2Y4WTyf975/c6ZM2eKstmsm5vbCM1xpZub28jIcaWbm9vIyHGlm5vbyMhx
         5VAKy2ed1juFZZTTereREX+/ss865fQ+hRW8z2eQ+ph6Z/Qx9dupnG53MXNcOZQ6Xz+0ofoLuJSTv5Oz
@@ -636,7 +636,7 @@
   <data name="reFlashButton.ImageHover" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAD3CAYAAAAwh5neAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAcmRJREFUeF7tvQ2YFNWd7w8mxhEdLUcn6V0iYZZ7+cs1613+es3yPP6TR5e7rsbE
+        vgAADr4B6kKxwAAAcmRJREFUeF7tvQ2YFNWd7w8mxhEdLUcn6V0iYZZ7+cs1613+es3yPP6TR5e7rsbE
         DTduNtzlGvWSRb1kJQSvhiUxSFCRxTciigQUBczIixl3UHEHFQJikBElDgwvDUPPW8/0dE/P9Ex39Vv9
         v99T51SfbmqGtwGZpup5Pk/VnO7pru6uT/1+59Q5p4ZYluXh4VGkuBZ6eHgUB66FHh4exYFroYeHR3Hg
         Wujh4VEcuBZ6eHgUB66FHh4exYFroYeHR3HgWujh4VEcuBZ6eHgUB66FHh4exYFroYeHR3HgWujh4VEc

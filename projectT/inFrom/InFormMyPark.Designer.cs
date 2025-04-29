@@ -55,6 +55,7 @@ namespace projectT
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.reFlashButton = new Sunny.UI.UIImageButton();
             this.uiImageButton1 = new Sunny.UI.UIImageButton();
+            this.uiSymbolButton4 = new Sunny.UI.UISymbolButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
@@ -362,10 +363,32 @@ namespace projectT
             this.uiImageButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.uiImageButton1.Click += new System.EventHandler(this.uiImageButton1_Click);
             // 
+            // uiSymbolButton4
+            // 
+            this.uiSymbolButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.uiSymbolButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton4.FillColor = System.Drawing.Color.DarkGreen;
+            this.uiSymbolButton4.FillColor2 = System.Drawing.Color.Green;
+            this.uiSymbolButton4.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.uiSymbolButton4.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.uiSymbolButton4.FillSelectedColor = System.Drawing.Color.Lime;
+            this.uiSymbolButton4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton4.Location = new System.Drawing.Point(392, 655);
+            this.uiSymbolButton4.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton4.Name = "uiSymbolButton4";
+            this.uiSymbolButton4.Radius = 45;
+            this.uiSymbolButton4.Size = new System.Drawing.Size(175, 79);
+            this.uiSymbolButton4.Symbol = 558908;
+            this.uiSymbolButton4.TabIndex = 114;
+            this.uiSymbolButton4.Text = "联系管理员";
+            this.uiSymbolButton4.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton4.Click += new System.EventHandler(this.uiSymbolButton4_Click);
+            // 
             // InFormMyPark
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(938, 894);
+            this.Controls.Add(this.uiSymbolButton4);
             this.Controls.Add(this.uiImageButton1);
             this.Controls.Add(this.reFlashButton);
             this.Controls.Add(this.uiSymbolButton3);
@@ -427,6 +450,7 @@ namespace projectT
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Sunny.UI.UIImageButton reFlashButton;
         private Sunny.UI.UIImageButton uiImageButton1;
+        private Sunny.UI.UISymbolButton uiSymbolButton4;
     }
 
 

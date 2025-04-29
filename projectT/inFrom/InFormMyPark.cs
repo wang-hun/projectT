@@ -15,25 +15,52 @@ namespace projectT
     public partial class InFormMyPark : UIPage
     {
         private DataSet ds { get; set; }
+        /// <summary>
+        /// 是否管理员，可阅览所有数据
+        /// </summary>
+        private bool manageRoot { get; set; }
         public InFormMyPark()
         {
             InitializeComponent();
-
+            manageRoot = false;
+        }
+        public InFormMyPark(bool root)
+        {
+            InitializeComponent();
+            manageRoot = root;
         }
         public void TableRenew()
         {
-            ds = SQLClass.GetDataSet
-                (
-                "select " +
-                "parkID,location,maxParking,nowParking," +
-                "CASE WHEN opening = 1 " +
-                "THEN '开放' WHEN opening = 0 " +
-                "THEN '关闭' " +
-                "END AS opening " +
-                "from park " +
-                "where manageID=" + "\"" + PublicClass.userObject.Username + "\""
-                );
+            if (!manageRoot)
+            {
+                ds = SQLClass.GetDataSet
+                    (
+                    "select " +
+                    "parkID,location,maxParking,nowParking," +
+                    "CASE WHEN opening = 1 " +
+                    "THEN '开放' WHEN opening = 0 " +
+                    "THEN '关闭' " +
+                    "END AS opening " +
+                    "from park " +
+                    "where manageID=" + "\"" + PublicClass.userObject.Username + "\""
+                    );
+            }
+            else
+            {
 
+                ds = SQLClass.GetDataSet
+                     (
+                     "select " +
+                     "parkID,location,maxParking,nowParking," +
+                     "CASE WHEN opening = 1 " +
+                     "THEN '开放' WHEN opening = 0 " +
+                     "THEN '关闭' " +
+                     "END AS opening " +
+                     "from park "
+                     );
+
+
+            }
         }
         public void TableReDraw()
         {
@@ -61,6 +88,16 @@ namespace projectT
             Renew();
             TableRenew();
             TableReDraw();
+            if (manageRoot)///是否管理员
+            {
+                uiSymbolButton3.Hide();
+                uiSymbolButton2.Hide();
+                uiSymbolButton1.Hide();
+            }
+            else 
+            {
+                uiSymbolButton4.Hide();
+            }
         }
         public UIAvatar ThisAvatar()
         {
@@ -157,7 +194,7 @@ namespace projectT
 
         private void reFlashButton_Click(object sender, EventArgs e)
         {
-            Task task=Task.Run(() => this.TableRenew());
+            Task task = Task.Run(() => this.TableRenew());
             var th = new Task(() =>
              {
 
@@ -172,10 +209,10 @@ namespace projectT
                          this.SetStatusFormDescription("数据加载中(" + 100 + "%)......");
                          this.SetStatusFormStepIt(100);
                          this.ShowInfoDialog("数据读取完成");
-                         
-                        return;
+
+                         return;
                      }
-                     
+
                  }
                  while (!task.IsCompleted)
                  {
@@ -185,7 +222,7 @@ namespace projectT
              });
             th.Start();
             TableReDraw();
-           
+
         }
 
         private void uiImageButton1_Click(object sender, EventArgs e)
@@ -196,9 +233,34 @@ namespace projectT
 
                 // 获取第一列的值（根据实际情况调整列索引）
                 string parkNum = selectedRow.Cells[0].Value.ToString();
-                var set = SQLClass.GetDataSet("select carNumber as \"车牌号\",parkStartTime as \"停入时间\" from nowpark where `index`="+parkNum);
+                var set = SQLClass.GetDataSet("select carNumber as \"车牌号\",parkStartTime as \"停入时间\" from nowpark where `index`=" + parkNum);
                 var newwin = new CarList(set, "车牌号");
                 newwin.ShowDialog();
+            }
+            else
+            {
+
+                this.ShowErrorTip("请在表格中选中一行，你要查询的停车场。");
+            }
+        }
+
+        private void uiSymbolButton4_Click(object sender, EventArgs e)
+        {
+            if (uiDataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = uiDataGridView1.SelectedRows[0];
+                string parkID = selectedRow.Cells[0].Value.ToString();
+                var user = SQLClass.ExecuteReader("SELECT u.name AS 用户姓名" +
+                   ", u.telnum AS 用户电话 " +
+                   "FROM park p JOIN users u ON p.manageID = u.user " +
+                   "WHERE  p.parkID = " + parkID + "; ");
+                if (user.Read())
+                {
+                    var name = user.GetString("用户姓名");
+                    var telnumber = user.GetString("用户电话");
+                    this.ShowInfoDialog("联系方式", "管理员:\t" + name + "\n\r 联系电话:\t" + telnumber);
+                }
+
             }
             else
             {

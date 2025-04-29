@@ -100,7 +100,7 @@ namespace projectT
             userid = -1;
             currFrom = null;
         }
-        public static void loadInFrom() {
+        public static void LoadInFrom() {
             infroms.ForEach(ifrom=> {
                 ifrom = null;
             });
@@ -127,7 +127,9 @@ namespace projectT
                 case 2:
                     ///监管者的嵌入式界面加载
                     infroms.Add(new InFormPrivaInfo());
+                    infroms.Add(new InFormMyPark(true));
                     fromsName.Add("个人信息");
+                    fromsName.Add("停车场信息");
                     break;
             }
         }
