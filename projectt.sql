@@ -11,7 +11,7 @@
  Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 18/04/2025 09:22:26
+ Date: 29/04/2025 20:07:39
 */
 
 SET NAMES utf8mb4;
@@ -30,11 +30,18 @@ CREATE TABLE `carpark`  (
   PRIMARY KEY (`index`) USING BTREE,
   INDEX `LicNumber`(`LicNumber` ASC) USING BTREE,
   CONSTRAINT `LicNumber` FOREIGN KEY (`LicNumber`) REFERENCES `cars` (`CarNumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of carpark
 -- ----------------------------
+INSERT INTO `carpark` VALUES (14, '京A00461', '2025-04-24 17:10:20', '2025-04-24 17:48:21', '1b8393093605e9d0bad9c7b5083c2718dfc62bfa5f3cddaac485b1a036951d0f');
+INSERT INTO `carpark` VALUES (15, '京A66666', '2025-04-24 17:10:10', '2025-04-24 17:48:24', 'd67b087a49ed070927c02467ff52a52daca7456c65dc6b5bcb4a4930ac331ab1');
+INSERT INTO `carpark` VALUES (16, '粤A65357', '2025-04-18 09:19:38', '2025-04-24 17:48:26', '5bb488f15980fcd02d9bc14332d28dfd79877d5d6eaedef65c0de1729daabc22');
+INSERT INTO `carpark` VALUES (17, '鲁B32575', '2025-04-24 17:32:19', '2025-04-24 17:48:30', 'bffe1a9cee4e23c7dda980297883b06344f8e2b8cb1c5738110a0bf8dd7eaa37');
+INSERT INTO `carpark` VALUES (18, '贵CV1000', '2025-04-26 00:00:00', '2025-04-26 06:47:21', '21f26909d0cbe9b68de88416d91076d0d69f538aed08ba3a709deb42bb50f2eb');
+INSERT INTO `carpark` VALUES (19, '京A66666', '2025-04-29 19:51:10', '2025-04-29 19:51:29', '103a201e48016af7da6cb728231834cb362beda34b171af2d9400850f4842fff');
+INSERT INTO `carpark` VALUES (20, '粤A65357', '2025-04-29 19:46:31', '2025-04-29 19:52:12', '7a0fc16a5e79cad4c1e0146e4321f57c0b3df7dd78808d31265cee27625855bb');
 
 -- ----------------------------
 -- Table structure for cars
@@ -49,7 +56,7 @@ CREATE TABLE `cars`  (
   INDEX `userid`(`userid` ASC) USING BTREE,
   INDEX `CarNumber`(`CarNumber` ASC) USING BTREE,
   CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `users` (`user`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cars
@@ -58,6 +65,8 @@ INSERT INTO `cars` VALUES ('黑色宝马', 1, '鲁B32575', '004');
 INSERT INTO `cars` VALUES ('蓝色奔驰', 2, '粤A65357', '004');
 INSERT INTO `cars` VALUES ('我的爱马', 3, '京A66666', '004');
 INSERT INTO `cars` VALUES ('我的爱马', 4, '京A00461', '005');
+INSERT INTO `cars` VALUES ('白色蔚来', 5, '贵CV1000', '001');
+INSERT INTO `cars` VALUES ('划过', 6, '京Q58A77', '001');
 
 -- ----------------------------
 -- Table structure for dict
@@ -113,6 +122,7 @@ CREATE TABLE `nowpark`  (
   `carNumber` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `parkStartTime` datetime NOT NULL,
   `local` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `index` int NULL DEFAULT NULL,
   PRIMARY KEY (`carNumber`) USING BTREE,
   INDEX `local`(`local` ASC) USING BTREE,
   CONSTRAINT `carNumber` FOREIGN KEY (`carNumber`) REFERENCES `cars` (`CarNumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -121,7 +131,8 @@ CREATE TABLE `nowpark`  (
 -- ----------------------------
 -- Records of nowpark
 -- ----------------------------
-INSERT INTO `nowpark` VALUES ('粤A65357', '2025-04-18 09:19:38', '73157d04081fd31af6bec4740d0ae11c014c64fc3e01f62646647a913c47e4b4');
+INSERT INTO `nowpark` VALUES ('京A00461', '2025-04-29 19:51:51', '2dd85ac77732c1f970fe76a9aacc84b33f2c01be74971755451a954868b8ef3d', 1);
+INSERT INTO `nowpark` VALUES ('贵CV1000', '2025-04-27 17:20:07', '8ec76924cd7b15a4e248f5cd69ec8db023d37993bd4534fb867bd4581fa47117', 1);
 
 -- ----------------------------
 -- Table structure for order_info
@@ -186,8 +197,8 @@ CREATE TABLE `park`  (
 -- ----------------------------
 -- Records of park
 -- ----------------------------
-INSERT INTO `park` VALUES ('命莲寺地下', 1, 1000, 0, '002', 1, 32.0433360000, 120.8087170000);
-INSERT INTO `park` VALUES ('阳光赛马场', 2, 2000, 1, '002', 0, 32.0195748161, 120.8588790894);
+INSERT INTO `park` VALUES ('命莲寺地下', 1, 1000, 2, '002', 1, 32.0433360000, 120.8087170000);
+INSERT INTO `park` VALUES ('阳光赛马场', 2, 2000, 0, '002', 0, 32.0195748161, 120.8588790894);
 INSERT INTO `park` VALUES ('南', 3, 3000, 0, '002', 0, 32.0246687851, 120.9132957458);
 
 -- ----------------------------

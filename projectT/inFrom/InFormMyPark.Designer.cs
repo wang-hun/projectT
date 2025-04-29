@@ -345,7 +345,6 @@ namespace projectT
             // 
             // uiImageButton1
             // 
-            this.uiImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.uiImageButton1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.uiImageButton1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiImageButton1.ForeColor = System.Drawing.Color.Red;
