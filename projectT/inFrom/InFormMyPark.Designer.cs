@@ -360,6 +360,7 @@ namespace projectT
             this.uiImageButton1.TabStop = false;
             this.uiImageButton1.Text = "查看";
             this.uiImageButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.uiImageButton1.Click += new System.EventHandler(this.uiImageButton1_Click);
             // 
             // InFormMyPark
             // 

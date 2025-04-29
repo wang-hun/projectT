@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X509;
 using projectT.MyDialog;
 using Sunny.UI;
 using System;
@@ -185,6 +186,25 @@ namespace projectT
             th.Start();
             TableReDraw();
            
+        }
+
+        private void uiImageButton1_Click(object sender, EventArgs e)
+        {
+            if (uiDataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = uiDataGridView1.SelectedRows[0];
+
+                // 获取第一列的值（根据实际情况调整列索引）
+                string parkNum = selectedRow.Cells[0].Value.ToString();
+                var set = SQLClass.GetDataSet("select carNumber as \"车牌号\",parkStartTime as \"停入时间\" from nowpark where `index`="+parkNum);
+                var newwin = new CarList(set, "车牌号");
+                newwin.ShowDialog();
+            }
+            else
+            {
+
+                this.ShowErrorTip("请在表格中选中一行，你要查询的停车场。");
+            }
         }
     }
 }
