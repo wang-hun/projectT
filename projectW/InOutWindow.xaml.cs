@@ -300,7 +300,7 @@ namespace projectW
                 var park = Parks.Where(p => p.Location == ParkOut).First();
                 var parkDate = park.Location + "=" + park.PosX.ToString("F10") + "+" + park.PosY.ToString("F10");
                 var nowParkDate = NowParks.Where(p => p.LicNumber.Equals(CarNumberOut)).First();
-                SQLClass.ExecuteSql("UPDATE `park` SET `nowParking` = " + (park.NowPost + 1) +
+                SQLClass.ExecuteSql("UPDATE `park` SET `nowParking` = " + (park.NowPost -1) +
                                       " WHERE `location` ='" + park.Location + "'");
                 var hash = BlockchainManager.creatBlock(parkDate);
                 SQLClass.ExecuteSql(

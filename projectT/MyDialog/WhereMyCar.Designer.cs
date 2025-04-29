@@ -40,13 +40,18 @@ namespace projectT
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel3 = new Sunny.UI.UILabel();
+            this.uiButton1 = new Sunny.UI.UIButton();
             this.pnlBtm.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBtm
             // 
+            this.pnlBtm.Controls.Add(this.uiButton1);
             this.pnlBtm.Location = new System.Drawing.Point(1, 531);
             this.pnlBtm.Size = new System.Drawing.Size(1024, 55);
+            this.pnlBtm.Controls.SetChildIndex(this.btnOK, 0);
+            this.pnlBtm.Controls.SetChildIndex(this.btnCancel, 0);
+            this.pnlBtm.Controls.SetChildIndex(this.uiButton1, 0);
             // 
             // btnCancel
             // 
@@ -99,7 +104,6 @@ namespace projectT
             this.uiLedBulb4.BlinkInterval = 500;
             this.uiLedBulb4.Location = new System.Drawing.Point(45, 38);
             this.uiLedBulb4.Name = "uiLedBulb4";
-            this.uiLedBulb4.On = false;
             this.uiLedBulb4.Size = new System.Drawing.Size(32, 32);
             this.uiLedBulb4.TabIndex = 95;
             this.uiLedBulb4.Text = "uiLedBulb4";
@@ -196,6 +200,28 @@ namespace projectT
             this.uiLabel3.Text = "35556317336";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // uiButton1
+            // 
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.uiButton1.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.uiButton1.FillPressColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.uiButton1.FillSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.uiButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.Location = new System.Drawing.Point(17, 9);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Radius = 30;
+            this.uiButton1.RectColor = System.Drawing.Color.Red;
+            this.uiButton1.RectPressColor = System.Drawing.Color.Red;
+            this.uiButton1.RectSelectedColor = System.Drawing.Color.Red;
+            this.uiButton1.Size = new System.Drawing.Size(202, 43);
+            this.uiButton1.TabIndex = 6;
+            this.uiButton1.Text = "联系管理员";
+            this.uiButton1.TipsFont = new System.Drawing.Font("宋体", 13F);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            // 
             // WhereMyCar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -242,5 +268,6 @@ namespace projectT
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UIButton uiButton1;
     }
 }

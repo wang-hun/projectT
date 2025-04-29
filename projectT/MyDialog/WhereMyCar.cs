@@ -76,9 +76,19 @@ namespace projectT
             this.gMapControl1.Overlays.Add(markers);
         }
 
-
-
-
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            var user = SQLClass.ExecuteReader("SELECT u.name AS 用户姓名" +
+                    ", u.telnum AS 用户电话 " +
+                    "FROM park p JOIN users u ON p.manageID = u.user " +
+                    "WHERE  p.location = '" + local + "'; ");
+            if (user.Read())
+            {
+                var name = user.GetString("用户姓名");
+                var telnumber = user.GetString("用户电话");
+                this.ShowInfoDialog("联系方式","管理员:\t"+name+"\n\r 联系电话:\t"+telnumber);
+            }
+        }
     }
 }
 
