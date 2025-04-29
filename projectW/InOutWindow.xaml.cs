@@ -256,10 +256,11 @@ namespace projectW
                 SQLClass.ExecuteSql("UPDATE `park` SET `nowParking` = " + (park.NowPost + 1) +
                                       " WHERE `location` ='" + park.Location + "'");
                 var hash = BlockchainManager.creatBlock(parkDate);
-
-                SQLClass.ExecuteSql("INSERT INTO nowpark(carNumber, parkStartTime, local)VALUES(" +
-                    "\"" + CarNumberIn + "\",\"" + DateTime.Now + "\",\"" + hash + "\"" +
-                    ")");
+              var rd=SQLClass.ExecuteReader("select parkID from park where`location` ='" + park.Location + "'");
+                rd.Read();
+                var index = rd.GetInt32("parkID");
+                var sql = "INSERT INTO nowpark(carNumber, parkStartTime, local, `index`) VALUES (\"" + CarNumberIn + "\", \"" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\", \"" + hash + "\", " + index + ")";
+                SQLClass.ExecuteSql(sql);
                 AduMessageBox.Show("停车事件已记录！", "提示");
                 return true;
             }
