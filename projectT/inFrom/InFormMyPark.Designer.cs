@@ -54,10 +54,12 @@ namespace projectT
             this.uiSymbolButton3 = new Sunny.UI.UISymbolButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.reFlashButton = new Sunny.UI.UIImageButton();
+            this.uiImageButton1 = new Sunny.UI.UIImageButton();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reFlashButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // uiAvatar1
@@ -341,10 +343,30 @@ namespace projectT
             this.reFlashButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.reFlashButton.Click += new System.EventHandler(this.reFlashButton_Click);
             // 
+            // uiImageButton1
+            // 
+            this.uiImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiImageButton1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.uiImageButton1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiImageButton1.ForeColor = System.Drawing.Color.Red;
+            this.uiImageButton1.Image = global::projectT.Properties.Resources.list1;
+            this.uiImageButton1.ImageHover = global::projectT.Properties.Resources.list2;
+            this.uiImageButton1.ImageOffset = new System.Drawing.Point(12, 5);
+            this.uiImageButton1.ImagePress = global::projectT.Properties.Resources.list3;
+            this.uiImageButton1.Location = new System.Drawing.Point(12, 349);
+            this.uiImageButton1.Name = "uiImageButton1";
+            this.uiImageButton1.Size = new System.Drawing.Size(133, 144);
+            this.uiImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.uiImageButton1.TabIndex = 113;
+            this.uiImageButton1.TabStop = false;
+            this.uiImageButton1.Text = "查看";
+            this.uiImageButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // InFormMyPark
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(938, 894);
+            this.Controls.Add(this.uiImageButton1);
             this.Controls.Add(this.reFlashButton);
             this.Controls.Add(this.uiSymbolButton3);
             this.Controls.Add(this.uiSymbolButton1);
@@ -359,6 +381,7 @@ namespace projectT
             this.uiPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reFlashButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,6 +426,7 @@ namespace projectT
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Sunny.UI.UIImageButton reFlashButton;
+        private Sunny.UI.UIImageButton uiImageButton1;
     }
 
 

@@ -151,6 +151,15 @@
   <data name="KETER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KETER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="list1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MALKUTH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MALKUTH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

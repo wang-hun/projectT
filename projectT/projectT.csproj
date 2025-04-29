@@ -346,6 +346,9 @@
     <None Include="Resources\flash_handing.png" />
     <None Include="Resources\where.png" />
     <None Include="Resources\where_handing.png" />
+    <None Include="Resources\list3.png" />
+    <None Include="Resources\list1.png" />
+    <None Include="Resources\list2.png" />
     <Content Include="TT.ico" />
   </ItemGroup>
   <ItemGroup />
