@@ -128,8 +128,10 @@ namespace projectT
                     ///监管者的嵌入式界面加载
                     infroms.Add(new InFormPrivaInfo());
                     infroms.Add(new InFormMyPark(true));
+                    infroms.Add(new InFormAllParked());
                     fromsName.Add("个人信息");
                     fromsName.Add("停车场信息");
+                    fromsName.Add("停放记录");
                     break;
             }
         }

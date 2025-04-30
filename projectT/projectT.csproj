@@ -162,6 +162,12 @@
     <Compile Include="BlockchainManager.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="CarPark.cs" />
+    <Compile Include="inFrom\InFormAllParked .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inFrom\InFormAllParked .Designer.cs">
+      <DependentUpon>InFormAllParked .cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDialog\CarList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inFrom\InFormFindPark.resx">
       <DependentUpon>InFormFindPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inFrom\InFormAllParked .resx">
+      <DependentUpon>InFormAllParked .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inFrom\InFormMyPark.resx">
       <DependentUpon>InFormMyPark.cs</DependentUpon>

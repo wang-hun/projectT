@@ -144,3 +144,4 @@ D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.cs
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.exe.config
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.WhereMyCar.resources
 D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.MyDialog.CarList.resources
+D:\系统默认\毕设\projectT\wang-hun\projectT\projectT\obj\Debug\projectT.InFormAllParked.resources
