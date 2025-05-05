@@ -124,7 +124,7 @@ namespace projectT
                 //
                 if (Convert.ToInt32(selectedRow.Cells[3].Value.ToString()) == 0)
                 {
-                    if (selectedRow.Cells[4].Value.ToString().Equals("False"))
+                    if (selectedRow.Cells[4].Value.ToString().Equals("关闭"))
                     {
                         if (this.ShowAskDialog("提示", "你确定删除" + cNumer + "的停车场信息吗？"))
                         {
