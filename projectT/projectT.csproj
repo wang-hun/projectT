@@ -174,6 +174,12 @@
     <Compile Include="MyDialog\CarList.Designer.cs">
       <DependentUpon>CarList.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyDialog\EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDialog\EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDialog\WhereMyCar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,12 +222,6 @@
     </Compile>
     <Compile Include="MyDialog\EditPassword.Designer.cs">
       <DependentUpon>EditPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyDialog\EditUserInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MyDialog\EditUserInfo.Designer.cs">
-      <DependentUpon>EditUserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Form0.cs">
       <SubType>Form</SubType>
@@ -287,6 +287,9 @@
     <EmbeddedResource Include="MyDialog\CarList.resx">
       <DependentUpon>CarList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyDialog\EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyDialog\WhereMyCar.resx">
       <DependentUpon>WhereMyCar.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,10 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyDialog\EditPassword.resx">
       <DependentUpon>EditPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyDialog\EditUserInfo.resx">
-      <DependentUpon>EditUserInfo.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

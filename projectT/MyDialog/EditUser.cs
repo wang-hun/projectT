@@ -14,7 +14,7 @@ namespace projectT
 {
     public partial class EditUserInfo : UIEditForm
     {
-       public static string tel = null;
+        public static string tel = null;
         public static string name = null;
         public EditUserInfo()
         {
@@ -29,7 +29,7 @@ namespace projectT
         }
         protected override bool CheckData()
         {
-           
+
             bool f1 = Regex.IsMatch(telNumTextBox2.Text, @"^\d+$");
             if (!f1)
             {
@@ -40,7 +40,7 @@ namespace projectT
             return CheckEmpty(nameTextBox1, "请输入姓名")
                    && CheckEmpty(telNumTextBox2, "请输入电话")
                    && f1;
-                   
+
         }
 
         private void EditUserInfo_Load(object sender, EventArgs e)
