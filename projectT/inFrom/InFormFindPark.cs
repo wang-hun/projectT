@@ -138,7 +138,7 @@ namespace projectT
             var emptyPark = (park.MaxPost - park.NowPost);
             this.uiDigitalLabel1.Value = emptyPark;
             var havingPark = (park.NowPost * 1.0 / park.MaxPost);
-            this.uiLedLabel4.Text = havingPark + " %";
+            this.uiLedLabel4.Text = havingPark +"";
             this.uiBattery1.Power = (int)((1 - havingPark) * 100);
         }
         private void uiImageButton1_Click(object sender, EventArgs e)
