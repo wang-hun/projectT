@@ -106,6 +106,16 @@ namespace projectT
                 InFormFindPark myInfoPage = page as InFormFindPark;
                 myInfoPage.Renew();
             }
+            else if (page is InFormAllParked)
+            {
+                InFormAllParked inFormAllParked = page as InFormAllParked;
+                inFormAllParked.Renew();
+            }
+            else if (page is InFormMyPark)
+            {
+                InFormMyPark inFormPark = page as InFormMyPark;
+                inFormPark.Renew();
+            }
         }
     }
 }
