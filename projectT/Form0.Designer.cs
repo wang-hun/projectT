@@ -68,13 +68,13 @@ namespace projectT
             // uiLabel1
             // 
             this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 48F);
+            this.uiLabel1.Font = new System.Drawing.Font("宋体", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiLabel1.ForeColor = System.Drawing.Color.Gold;
             this.uiLabel1.Location = new System.Drawing.Point(187, 0);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(543, 156);
             this.uiLabel1.TabIndex = 1;
-            this.uiLabel1.Text = "T Company";
+            this.uiLabel1.Text = "停车管理系统";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uiLabel2
@@ -91,7 +91,7 @@ namespace projectT
             // 
             // Form0
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(115F, 115F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1215, 793);
